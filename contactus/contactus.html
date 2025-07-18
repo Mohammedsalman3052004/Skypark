@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MJR Builders</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .contact-page-wrapper {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Header Banner */
+        .contact-page-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            /* background: url(../Images/banner\ 4.webp); */
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .contact-header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .contact-main-title {
+            font-size: 4.5rem;
+            font-weight: 300;
+            margin-bottom: 25px;
+            letter-spacing: 4px;
+        }
+
+        .contact-breadcrumb-nav {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .contact-breadcrumb-nav a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-breadcrumb-nav a:hover {
+            color: white;
+        }
+
+        /* Main Content Area */
+        .contact-main-content {
+            width: 100%;
+            padding: 120px 0;
+            background: #f8f9fa;
+        }
+
+        .contact-content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 120px;
+            align-items: start;
+        }
+
+        /* Contact Information Side */
+        .contact-info-section {
+            width: 100%;
+        }
+
+        .contact-section-heading {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .contact-section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 60px;
+            padding: 40px 0;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .contact-info-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        .contact-icon-circle svg {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+
+        .contact-item-details h3 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .contact-item-details p {
+            color: #5a6c7d;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .contact-item-details a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item-details a:hover {
+            color: #2980b9;
+        }
+
+        /* Booking Form Side */
+        .booking-form-section {
+            width: 100%;
+            background: white;
+            padding: 80px 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-form-title {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .form-input-group {
+            margin-bottom: 35px;
+        }
+
+        .form-input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .form-input-group label {
+            display: block;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 1.15rem;
+        }
+
+        .form-required-field::after {
+            content: '*';
+            color: #e74c3c;
+            margin-left: 6px;
+        }
+
+        .form-input-field,
+        .form-textarea-field {
+            width: 100%;
+            padding: 22px 25px;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            font-family: inherit;
+        }
+
+        .form-input-field:focus,
+        .form-textarea-field:focus {
+            outline: none;
+            border-color: #3498db;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-textarea-field {
+            resize: vertical;
+            min-height: 160px;
+        }
+
+        .form-submit-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px 60px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin: 50px auto 0;
+            min-width: 250px;
+        }
+
+        .form-submit-button:hover {
+            background: linear-gradient(135deg, #2980b9, #21618c);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
+        }
+
+        .form-submit-button:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .contact-content-container {
+                gap: 80px;
+            }
+
+            .booking-form-section {
+                padding: 60px 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-page-header {
+                padding: 80px 0;
+            }
+
+            .contact-main-title {
+                font-size: 3rem;
+                letter-spacing: 2px;
+            }
+
+            .contact-main-content {
+                padding: 80px 0;
+            }
+
+            .contact-content-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                padding: 0 20px;
+            }
+
+            .contact-section-heading,
+            .booking-form-title {
+                font-size: 2.2rem;
+            }
+
+            .booking-form-section {
+                padding: 50px 30px;
+            }
+
+            .form-input-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .contact-icon-circle {
+                align-self: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-page-header {
+                padding: 60px 0;
+            }
+
+            .contact-main-title {
+                font-size: 2.5rem;
+            }
+
+            .contact-main-content {
+                padding: 60px 0;
+            }
+
+            .contact-header-content,
+            .contact-content-container {
+                padding: 0 15px;
+            }
+
+            .booking-form-section {
+                padding: 40px 20px;
+            }
+
+            .contact-section-heading,
+            .booking-form-title {
+                font-size: 1.8rem;
+            }
+
+            .form-submit-button {
+                width: 100%;
+                margin-top: 40px;
+            }
+        }
+
+        /* Smooth Animations */
+        .contact-info-item {
+            animation: slideInFromLeft 0.8s ease-out;
+        }
+
+        .booking-form-section {
+            animation: slideInFromRight 0.8s ease-out;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../navbar.css">
+</head>
+
+<body>
+    <nav class="navbar-wrapper">
+        <div class="navbar-content">
+            <!-- Logo -->
+            <img src="../Skypark logo.svg" alt="" height="50" width="250">
+
+            <!-- Desktop Navigation -->
+            <ul class="desktop-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Configuration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Location</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+
+            <!-- Contact Number -->
+            <div class="contact-number">
+                +91 8884456808
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <div class="hamburger-menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link active">Overview</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Configuration</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Gallery</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Location</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+
+    <div class="contact-page-wrapper">
+        <!-- Header Section -->
+        <section class="contact-page-header">
+            <div class="contact-header-content">
+                <h1 class="contact-main-title">CONTACT US</h1>
+                <div class="contact-breadcrumb-nav">
+                    <a href="#">Homepage</a>
+                    <span> → </span>
+                    <span>Contact us</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="contact-main-content">
+            <div class="contact-content-container">
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2 class="contact-section-heading">GET IN TOUCH</h2>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon-circle">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                        </div>
+                        <div class="contact-item-details">
+                            <h3>MJR Builders Private Limited</h3>
+                            <p>#444 Grand 3rd Floor,</p>
+                            <p>16th Cross 5th Main,</p>
+                            <p>HSR Layout Sector - 6,</p>
+                            <p>Bangalore - 560 102</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon-circle">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                        </div>
+                        <div class="contact-item-details">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:+918048507166">+91 80 48507166</a> (Landline)</p>
+                            <p><a href="tel:+918088776699">+91 80887 76699</a> (Mobile)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon-circle">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                        </div>
+                        <div class="contact-item-details">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:projectinfo@mjrbuilders.in">projectinfo@mjrbuilders.in</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-form-section">
+                    <h2 class="booking-form-title">BOOK YOUR VISIT</h2>
+
+                    <form id="contactFormMain">
+                        <div class="form-input-row">
+                            <div class="form-input-group">
+                                <label for="firstNameInput" class="form-required-field">First Name</label>
+                                <input type="text" id="firstNameInput" name="firstName" class="form-input-field"
+                                    required>
+                            </div>
+                            <div class="form-input-group">
+                                <label for="lastNameInput" class="form-required-field">Last Name</label>
+                                <input type="text" id="lastNameInput" name="lastName" class="form-input-field" required>
+                            </div>
+                        </div>
+
+                        <div class="form-input-group">
+                            <label for="emailInput" class="form-required-field">Your Email</label>
+                            <input type="email" id="emailInput" name="email" class="form-input-field" required>
+                        </div>
+
+                        <div class="form-input-group">
+                            <label for="phoneInput" class="form-required-field">Phone Number</label>
+                            <input type="tel" id="phoneInput" name="phone" class="form-input-field" required>
+                        </div>
+
+                        <div class="form-input-group">
+                            <label for="messageInput">A Brief Description Of The Services You Need</label>
+                            <textarea id="messageInput" name="message" class="form-textarea-field"
+                                placeholder="Tell us about your project requirements and how we can help you..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Left Side - Brand & Contact -->
+                <div class="footer-brand-section">
+                    <!-- Brand Logo -->
+                    <img src="../Skypark logo.svg" alt="" width="100" height="90">
+
+                    <!-- Address -->
+                    <div class="footer-address">
+                        <h4>Address:</h4>
+                        <p>G-1, Sohan RNR Icon, Near Alpine Eco Apartments,<br>
+                            Doddanakundi Extension, Bengaluru, Karnataka 560 037</p>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <svg class="footer-contact-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            <a href="tel:+918884456808">+91 8884456808</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg class="footer-contact-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <a href="mailto:info@sohandevelopers.com">info@sohandevelopers.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Icons -->
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="Facebook">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                            <svg class="footer-social-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side - Quick Links -->
+                <div class="footer-links-section">
+                    <h3 class="footer-links-title">QUICK LINKS</h3>
+                    <div class="footer-links-grid">
+                        <a href="#" class="footer-link">Get In Touch</a>
+                        <a href="#" class="footer-link">EMI</a>
+                        <a href="#" class="footer-link">Careers</a>
+                        <a href="#" class="footer-link">Testimonials</a>
+                        <a href="#" class="footer-link">Channel Partner</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Refer Us</a>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="footer-bottom">
+                <p class="footer-rera">PRM/KA/RERA/1251/309/PR/181109/002131</p>
+                <hr class="footer-divider">
+                <p class="footer-copyright">Copyright © Sohan Realty 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer scipt -->
+    <script>
+
+    </script>
+
+
+    <!-- navbar script -->
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', function () {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                mobileMenuBtn.classList.add('menu-open');
+                mobileMenuOverlay.classList.add('menu-active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                mobileMenuBtn.classList.remove('menu-open');
+                mobileMenuOverlay.classList.remove('menu-active');
+                document.body.style.overflow = 'auto'; // Enable scrolling
+            }
+        });
+
+        // Close menu when clicking outside
+        mobileMenuOverlay.addEventListener('click', function (e) {
+            if (e.target === mobileMenuOverlay) {
+                isMenuOpen = false;
+                mobileMenuBtn.classList.remove('menu-open');
+                mobileMenuOverlay.classList.remove('menu-active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Handle menu item clicks
+        const menuLinks = document.querySelectorAll('.navbar-menu-link, .mobile-menu-link');
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Remove active class from all links
+                document.querySelectorAll('.navbar-menu-link, .mobile-menu-link').forEach(l => {
+                    l.classList.remove('active-link');
+                });
+
+                // Add active class to clicked link and its counterpart
+                const linkText = this.textContent;
+                document.querySelectorAll('.navbar-menu-link, .mobile-menu-link').forEach(l => {
+                    if (l.textContent === linkText) {
+                        l.classList.add('active-link');
+                    }
+                });
+
+                // Close mobile menu if open
+                if (isMenuOpen) {
+                    isMenuOpen = false;
+                    mobileMenuBtn.classList.remove('menu-open');
+                    mobileMenuOverlay.classList.remove('menu-active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                isMenuOpen = false;
+                mobileMenuBtn.classList.remove('menu-open');
+                mobileMenuOverlay.classList.remove('menu-active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Footer script
+
+        // Smooth scrolling for footer links
+        document.querySelectorAll('.footer-link, .footer-logo').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Add active state or navigation logic here
+                console.log('Navigating to:', this.textContent || 'Home');
+
+                // Example: Add a subtle animation on click
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Social media link tracking
+        document.querySelectorAll('.footer-social-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const platform = this.getAttribute('aria-label');
+                console.log('Social media click:', platform);
+
+                // Add analytics or actual social media links here
+            });
+        });
+
+        // Contact link functionality
+        document.querySelectorAll('.footer-contact-item a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Allow default behavior for phone and email links
+                console.log('Contact clicked:', this.href);
+            });
+        });
+
+        // Responsive menu handling
+        function handleResize() {
+            const isMobile = window.innerWidth <= 768;
+            const quickLinksTitle = document.querySelector('.footer-links-title');
+
+            if (isMobile) {
+                quickLinksTitle.style.textAlign = 'left';
+            } else {
+                quickLinksTitle.style.textAlign = 'center';
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('load', handleResize);
+    </script>
+
+
+    <script>
+        document.getElementById('contactFormMain').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Validation
+            if (!data.firstName || !data.lastName || !data.email || !data.phone) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Phone validation
+            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+            if (!phoneRegex.test(data.phone.replace(/\s/g, ''))) {
+                alert('Please enter a valid phone number.');
+                return;
+            }
+
+            // Success
+            alert('Thank you for your message! We will contact you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
