@@ -12,7 +12,7 @@ body {
 
 /* Main Navigation */
 .navbar-wrapper {
-    background: #F5EBE1;
+    background: #1E2A38;
     position: fixed;
     top: 0;
     left: 0;
@@ -87,7 +87,7 @@ body {
 
 .nav-link {
     display: block;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     padding: 24px 25px;
     font-size: 16px;
@@ -97,16 +97,16 @@ body {
 }
 
 .nav-link:hover {
-    color: #000000;
+    color: #ffffff;
 }
 
 .nav-link.active {
-    color: #000000a4;
+    color: #ffffff;
 }
 
 /* Contact Number */
 .contact-number {
-    color: #000000;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -117,7 +117,7 @@ body {
     display: none;
     background: none;
     border: none;
-    color: #000000;
+    color: #ffffff;
     cursor: pointer;
     padding: 8px;
 }
@@ -133,7 +133,7 @@ body {
     position: absolute;
     height: 2px;
     width: 100%;
-    background: #000000;
+    background: #ffffff;
     border-radius: 1px;
     transition: all 0.3s ease;
 }
@@ -260,7 +260,7 @@ body {
 
 /* Footer Styles */
 .main-footer {
-    background: #F5EBE1;
+    background: #1E2A38;
     color: white;
     padding: 60px 0 0;
     /* margin-top: 50px; */
@@ -329,11 +329,11 @@ body {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 12px;
-    color: #000;
+    color: #ffffff;
 }
 
 .footer-address p {
-    color: #000;
+    color: #ffffff;
     line-height: 1.6;
     font-size: 14px;
 }
@@ -357,7 +357,7 @@ body {
 }
 
 .footer-contact-item a {
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s ease;
@@ -406,7 +406,7 @@ body {
     font-weight: 600;
     text-align: center;
     margin-bottom: 30px;
-    color: #000;
+    color: #ffffff;
     letter-spacing: 1px;
 }
 
@@ -417,7 +417,7 @@ body {
 }
 
 .footer-link {
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     padding: 8px 0;
@@ -438,7 +438,7 @@ body {
 
 .footer-rera {
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 20px;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -448,13 +448,13 @@ body {
 .footer-divider {
     border: none;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #000000, transparent);
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
     margin: 20px 0;
 }
 
 .footer-copyright {
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
     padding-bottom: 30px;
     text-align: center;
 }

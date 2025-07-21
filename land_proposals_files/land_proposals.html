@@ -411,7 +411,521 @@
         Generative AI powered Kenyt<a href="https://www.kenyt.ai/" rel="noopener nofollow" target="_blank">AI
             chatbot</a> or AI Assistant.</noscript>
 
+<style>
+    
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 
+/* Breadcrumb Section */
+.b-imag {
+   /* background-color: #76C043; */
+    padding: 60px 0;
+    color: white;
+    margin-bottom: 0;
+}
+
+.b-imag .heading-font {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.b-imag div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.b-imag a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.b-imag a:hover {
+    color: #fff;
+}
+
+.b-imag img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.post-page {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Main Content Sections */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: #fff;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Headings */
+.main-heading h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.main-heading h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #76C043;
+    border-radius: 2px;
+}
+
+/* Intro Text */
+.py-4 {
+    padding: 2rem 0;
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cards */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0 15px;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.card-2 {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid #e9ecef;
+}
+
+.card-2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-2 img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    display: block;
+    filter: hue-rotate(200deg);
+    transition: transform 0.3s ease;
+}
+
+.card-2:hover img {
+    transform: scale(1.1);
+}
+
+.partner-content {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.text-justify {
+    text-align: justify;
+    color: #6c757d;
+    line-height: 1.7;
+}
+
+.px-3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Form Section */
+.section:last-child {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="80" cy="80" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="40" cy="60" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    width: 100%;
+}
+
+.contact-dark {
+    color: #fff !important;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.text-dark {
+    color: #fff !important;
+}
+
+/* Form Styles */
+#land-form {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.form-floating {
+    position: relative;
+}
+
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 10px !important;
+    padding: 1rem 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.form-control:focus {
+    border-color: #76C043;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    outline: 0;
+}
+
+.form-floating label {
+    padding: 1rem 0.75rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+/* Button */
+.btnn-ani {
+    background: #76C043;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btnn-ani:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btnn-ani:active {
+    transform: translateY(0);
+}
+
+.btnn-ani span {
+    position: relative;
+    z-index: 1;
+}
+
+.btnn-ani::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(135deg, #764ba2, #667eea); */
+    transition: left 0.3s ease;
+}
+
+.btnn-ani:hover::before {
+    left: 0;
+}
+
+/* Grid System */
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.offset-md-1 {
+    margin-left: 8.333333%;
+}
+
+.col-md-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.d-block { display: block; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.my-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.w-25 { width: 25%; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-lg-0 { margin-bottom: 0; }
+
+/* Responsive Design */
+
+/* Large screens (desktops) */
+@media (max-width: 1199.98px) {
+    .main-heading h2 {
+        font-size: 2.2rem;
+    }
+    
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 991.98px) {
+    .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .main-heading h2 {
+        font-size: 2rem;
+    }
+    
+    .b-imag .heading-font {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .card-2 {
+        padding: 30px 20px;
+    }
+    
+    #land-form {
+        padding: 30px;
+    }
+    
+    .offset-md-1 {
+        margin-left: 0;
+    }
+    
+    .col-md-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 767.98px) {
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .b-imag .heading-font {
+        font-size: 1.8rem;
+    }
+    
+    .main-heading h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-dark {
+        font-size: 1.8rem;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .b-imag {
+        padding: 40px 0;
+    }
+    
+    .py-4 {
+        padding: 1.5rem 0;
+        font-size: 1rem;
+    }
+    
+    .card-2 {
+        padding: 25px 15px;
+    }
+    
+    .partner-content {
+        font-size: 1rem;
+    }
+    
+    #land-form {
+        padding: 25px;
+        border-radius: 15px;
+    }
+    
+    .btnn-ani {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .b-imag div > div {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .form-control {
+        padding: 0.8rem 0.75rem;
+    }
+    
+    .form-floating label {
+        padding: 0.8rem 0.75rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 575.98px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .b-imag .heading-font {
+        font-size: 1.6rem;
+    }
+    
+    .main-heading h2 {
+        font-size: 1.6rem;
+    }
+    
+    .contact-dark {
+        font-size: 1.6rem;
+    }
+    
+    .card-2 img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #land-form {
+        padding: 20px;
+    }
+    
+    .btnn-ani {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .section:last-child {
+        background-attachment: scroll;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-2 {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.card-2:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.card-2:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* Focus styles for accessibility */
+.form-control:focus,
+.btnn-ani:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .section:last-child {
+        background: #f8f9fa !important;
+    }
+    
+    .text-dark {
+        color: #333 !important;
+    }
+    
+    .btnn-ani {
+        background: #333 !important;
+    }
+}
+</style>
 
     <link rel="stylesheet" href="../navbar.css">
 </head>
@@ -548,7 +1062,7 @@
                         <img src="./Price-Management.png" alt="Villas for sale  Sarjapur Road"
                             title="Spacious 5BHK villas in Sarjapur Road" class="w-25 d-block mx-auto mb-3">
                         <p class="px-3 partner-content ">REST ASSURED OF A MUTUALLY BENEFICIAL DEAL NO MATTER WHAT</p>
-                        <p class="px-3 text-justify">The name MJR has entwined itself with the trust and faith of
+                        <p class="px-3 text-justify" style="font-size: 14px;">The name MJR has entwined itself with the trust and faith of
                             customers. Be it for selling your land
                             or working jointly as partners, when you make a deal with us in any form, you have the gem
                             of an experience.
@@ -623,7 +1137,7 @@
                                     </div>
                                     <div class="col-12 text-center">
 
-                                        <button class="btnn-ani py-1 my-2 px-2 d-block mx-auto"><span>GET IN
+                                        <button class="btnn-ani py-1 my-2 px-2 d-block mx-auto" style="background-color: #76C043;"><span>GET IN
                                                 Touch</span></button>
                                     </div>
                                 </div>

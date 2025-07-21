@@ -230,7 +230,7 @@
 
     .submit-btn{
         border-radius: 10px;
-        background-color: #000000;
+        background-color: #76C043;
         color: #fff;
         padding: 10px 20px;
         font-size: 16px;
@@ -245,10 +245,128 @@
         justify-content: center;
         width: 100%;
     }
-    /* .master-plan-wrapper:hover .link-overlay-wrapper{
-
-    } */
+    .footer-link{
+        /* text-align: left; */
+    }
+   
     
+</style>
+
+
+<style>
+    .master-plan {
+        text-align: center;
+        padding: 2rem;
+        font-family: Arial, sans-serif;
+    }
+
+    .master-plan h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 2rem;
+        font-weight: 300;
+    }
+
+    .owl-item {
+        position: relative;
+        display: inline-block;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .owl-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .master-plan-wrapper {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .master-plan-wrapper > div {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .link-overlay-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+    }
+
+    .master-plan-wrapper:hover .link-overlay-wrapper {
+        opacity: 1;
+    }
+
+    .link-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.9);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .link-icon:hover {
+        background-color: #fff;
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .link-icon a {
+        color: #333;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .link-icon:hover a {
+        color: #007bff;
+    }
+
+    .wrapp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cloned {
+        /* Additional styling for cloned items if needed */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .owl-item {
+            width: 90% !important;
+            height: 30rem !important;
+        }
+
+        .master-plan h1 {
+            font-size: 2rem;
+        }
+
+        .link-icon {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .link-icon a {
+            font-size: 1rem;
+        }
+    }
 </style>
 
 
@@ -1048,7 +1166,7 @@
         </div>
     </section>
 
-    <section class="master-plan">
+    <!-- <section class="master-plan">
         <h1>Master Plan</h1> 
         <div class="owl-item cloned master-plan-wrapper"
         style="width: 60rem; height: 40rem; margin-right: 10px;">
@@ -1056,7 +1174,7 @@
             <div 
                 style="background-image: url(./Images/floor\ plan-08.png); background-size: cover; height: 38rem;">
                 <div
-                class="link-overlay-wrapper"
+                class="link-overlay-wrapper wrapp"
                 style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
                     <span class="link-icon" style="background-color: #000000cc; font-size: 2rem; border-radius: 15px;">
                         <a data-fancybox="general"
@@ -1069,7 +1187,29 @@
             </div>
         </div>
     </div>
+    </section> -->
+
+
+    <section class="master-plan">
+        <h1>Master Plan</h1>
+        <div class="owl-item cloned master-plan-wrapper"
+             style="width: 60rem; height: 40rem; margin-right: 10px;">
+            <div>
+                <div style="background-image: url(./Images/floor\ plan-08.png); background-size: cover; height: 38rem;">
+                    <div class="link-overlay-wrapper wrapp"
+                         style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                        <span class="link-icon" style="background-color: rgba(255, 255, 255, 0.9); font-size: 2rem; border-radius: 50%;">
+                            <a data-fancybox="general" href="./Images/floor plan-08.png">
+                                <i class="fa fa-chain"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+
 
     <!-- gallery start -->
 
@@ -3659,7 +3799,37 @@
         });
     </script>
 
+<script>
+    // Optional: Add smooth hover effects with JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        const masterPlanWrapper = document.querySelector('.master-plan-wrapper');
+        const linkIcon = document.querySelector('.link-icon');
 
+        masterPlanWrapper.addEventListener('mouseenter', function() {
+            linkIcon.style.animation = 'fadeInScale 0.3s ease forwards';
+        });
+
+        masterPlanWrapper.addEventListener('mouseleave', function() {
+            linkIcon.style.animation = '';
+        });
+    });
+
+    // Add CSS animation keyframes via JavaScript
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInScale {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
 
 
 
