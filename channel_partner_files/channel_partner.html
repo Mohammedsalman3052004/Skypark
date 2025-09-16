@@ -524,46 +524,51 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGMHS8CN" height="0" width="" 0
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <nav class="navbar-wrapper">
-        <div class="navbar-content">
-            <!-- Logo -->
-            <img src="../Skypark logo.svg" alt="" height="50" width="250">
-
-            <!-- Desktop Navigation -->
-            <ul class="desktop-nav">
-                <li class="nav-item">
-                    <a href="../index.html" class="nav-link ">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../blog_files/blog.html" class="nav-link">Blogs</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./channel_partner.html" class="nav-link active">Channel Partners</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../land_proposals_files/land_proposals.html" class="nav-link">Land Proposals</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../career/career.html" class="nav-link">Careers</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../contactus/contactus.html" class="nav-link">Contact Us</a>
-                </li>
-            </ul>
-
-            <!-- Contact Number -->
-            <div class="contact-number">
-                +91 8884456808
-            </div>
-
-            <!-- Mobile Toggle -->
-            <button class="mobile-toggle" id="mobileToggle">
-                <div class="hamburger-menu">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
+      <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../Skypark logo.svg" alt="" height="50px" width="250px">
+            </a>
+            
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About Us</a>
+                <div class="dropdown">
+                    <a href="#projects">Projects ⏷</a>
+                    <div class="dropdown-content">
+                        <a href="../skypark.html">Sohan Skypark</a>
+                    </div>
                 </div>
-            </button>
+                <a href="../blog_files/blog.html">Blogs</a>
+                <a href="./channel_partner.html">Channel Partners</a>
+                <a href="../land_proposals_files/land_proposals.html">Land Proposals</a>
+                <a href="../career/career.html">Careers</a>
+                <a href="../contactus/contactus.html">Contact Us</a>
+            </div>
+            
+            <a href="tel:8884456808" class="phone-number">
+                📞 +91 8884456808
+            </a>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html" onclick="toggleMobileMenu()">Home</a>
+            <a href="../about.html" onclick="toggleMobileMenu()">About Us</a>
+            <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+            <div class="mobile-dropdown">
+                <a href="../skypark.html" onclick="toggleMobileMenu()">Sohan Skypark</a>
+            </div>
+            <a href="../blog_files/blog.html" onclick="toggleMobileMenu()">Blogs</a>
+            <a href="./channel_partner.html" onclick="toggleMobileMenu()">Channel Partners</a>
+            <a href="../land_proposals_files/land_proposals.html" onclick="toggleMobileMenu()">Land Proposals</a>
+            <a href="../career/career.html" onclick="toggleMobileMenu()">Careers</a>
+            <a href="../contactus/contactus.html" onclick="toggleMobileMenu()">Contact Us</a>
+            <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
+                📞 +91 8884456808
+            </div>
         </div>
     </nav>
     <h1 class="d-none"> Expand Opportunities &amp; Your Network</h1>
@@ -664,7 +669,7 @@
 
     
 
-    <section class="section">
+    <section class="section" style="display: none;">
         <div class="container">
             <div class="main-heading">
                 <h2>Who is our Ideal Channel Partner?</h2>
@@ -744,9 +749,8 @@
             <div class="row ">
                 <div class="offset-md-1 col-md-10">
                     <div class="main-heading text-dark text-left py-3">
-                        <h2 class="contact-dark text-center">SHARE YOUR PORTFOLIO</h2>
-                        <p class="text-dark text-center">Share your portfolio to help us proceed with the execution of
-                            Channel Partner Agreement</p>
+                        <h2 class="contact-dark text-center">SUBMIT YOUR PORTFOLIO</h2>
+                        <p class="text-dark text-center">Please share your portfolio with us so we can initiate and proceed with the execution of the Channel Partner Agreement.</p>
                     </div>
                 </div>
 

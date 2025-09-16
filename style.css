@@ -317,14 +317,14 @@ nav {
     margin-top: -3px;
 }
 
-nav a {
+/* nav a {
     display: inline-block;
     margin: 15px 0px 0px 30px;
     text-transform: capitalize;
     color: #ffffff !important;
     font-size: 18px;
     cursor: pointer;
-}
+} */
 
 nav a.active {
     color: #cdab64;
@@ -1138,7 +1138,7 @@ label.error {
         border-bottom: 1px solid #f5ebe1;
         margin: 0px;
         padding: 12px 0;
-        background: #f5ebe1;
+        /* background: #f5ebe1; */
     }
 
     .burger-menu {
@@ -1839,9 +1839,9 @@ margin-bottom: 23px;
     }
 }
 
-#carousel-example-generic {
+/* #carousel-example-generic {
     margin-top: 56px;
-}
+} */
 
 .m-banner {
     display: none !important;

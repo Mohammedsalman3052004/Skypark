@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sohan Realty - Premium Real Estate in Bangalore</title>
+    <title>About Us - Sohan Realty</title>
     <style>
         * {
             margin: 0;
@@ -26,6 +26,7 @@
             --accent-foreground: #ffffff;
             --background: #ffffff;
             --muted-foreground: #6b7280;
+            --orange: #f97316;
         }
 
 
@@ -33,7 +34,6 @@
         .hero {
             position: relative;
             min-height: 600px;
-            /* background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('/placeholder.svg?height=600&width=1200') center/cover; */
             background: linear-gradient(#30455c, #1E2A38), url('/placeholder.svg?height=600&width=1200') center/cover;
             display: flex;
             align-items: center;
@@ -138,55 +138,77 @@
             margin: 0 auto;
         }
 
-        /* Ongoing Projects - Single Project Centered */
-        .project-container {
-            display: flex;
-            justify-content: center;
+        /* Added Mission & Vision section styles */
+        .mission-vision-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #374151;
         }
 
-        .project-card {
-            background: var(--background);
+        .mission-vision-underline {
+            width: 80px;
+            height: 4px;
+            background-color: var(--orange);
+            margin: 0 auto 3rem;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .vision-section, .mission-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .vision-content, .mission-content {
+            padding: 2rem;
+        }
+
+        .vision-content h3, .mission-content h3 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #374151;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .vision-content h3::before, .mission-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--orange);
+        }
+
+        .vision-content p, .mission-content p {
+            color: var(--muted-foreground);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .vision-image, .mission-image {
+            height: 300px;
             border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-            max-width: 400px;
-            width: 100%;
         }
 
-        .project-card:hover {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        .vision-image {
+            background: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mx9OQhdY3Fpq0mOxE5rsjcFczTT2bW.png') center/cover;
         }
 
-        .project-image {
-            height: 250px;
-            background: url('/placeholder.svg?height=250&width=400') center/cover;
-            position: relative;
-        }
-
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(30, 58, 138, 0.8));
-            color: var(--primary-foreground);
-            padding: 1.5rem;
-        }
-
-        .project-overlay h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content p {
-            color: var(--muted-foreground);
-            margin-bottom: 1rem;
+        .mission-image {
+            background: url('/placeholder.svg?height=300&width=500') center/cover;
         }
 
         /* Why Sohan Realty - Cards */
@@ -234,113 +256,6 @@
             line-height: 1.6;
         }
 
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--background);
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .stars {
-            display: flex;
-            gap: 0.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .star {
-            color: var(--accent);
-            font-size: 1.25rem;
-        }
-
-        .testimonial-content {
-            color: var(--muted-foreground);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            border-top: 1px solid #e5e7eb;
-            padding-top: 1rem;
-        }
-
-        .author-name {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .author-location {
-            color: var(--muted-foreground);
-            font-size: 0.875rem;
-        }
-
-        /* Blogs */
-        .blogs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .blog-card {
-            background: var(--background);
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-        }
-
-        .blog-card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .blog-image {
-            height: 200px;
-            background: url('/placeholder.svg?height=200&width=400') center/cover;
-        }
-
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-date {
-            color: var(--muted-foreground);
-            font-size: 0.875rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .blog-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .blog-excerpt {
-            color: var(--muted-foreground);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent);
-            color: var(--accent-foreground);
-        }
-
-
-
         /* Responsive Design */
         @media (min-width: 768px) {
             .nav-links {
@@ -362,6 +277,22 @@
             .hero-content h1 {
                 font-size: 3.5rem;
             }
+
+            .vision-section {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .mission-section {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .mission-content {
+                order: 2;
+            }
+
+            .mission-image {
+                order: 1;
+            }
         }
 
         @media (max-width: 767px) {
@@ -373,7 +304,7 @@
                 font-size: 2rem;
             }
 
-            .section-title {
+            .section-title, .mission-vision-title {
                 font-size: 2rem;
             }
         }
@@ -382,10 +313,8 @@
     <link rel="stylesheet" href="./navbar.css">
 </head>
 <body>
-    
-    
-
-    <!-- Navigation -->
+   
+     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="./index.html" class="logo">
@@ -433,12 +362,13 @@
         </div>
     </nav>
 
-    <section class="hero" id="home">
+    <!-- Hero Banner -->
+    <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>SOHAN SKYPARK - LUXURY LIVING IN THE SKY</h1>
-                <p>Discover premium 2 & 3 BHK apartments with world-class amenities in the heart of Jakkur. Experience modern living with thoughtful design and strategic location.</p>
-                <a href="#contact" class="btn">Explore Properties</a>
+                <h1>ABOUT SOHAN REALTY</h1>
+                <p>Building trust, quality, and dreams for over a decade. Discover our journey of creating premium homes that blend excellence with thoughtful design.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
             </div>
             
             <div class="contact-form">
@@ -462,6 +392,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section class="section section-secondary">
         <div class="container">
             <h2 class="section-title">ABOUT SOHAN REALTY</h2>
@@ -473,26 +404,33 @@
         </div>
     </section>
 
+    <!-- Mission & Vision Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">ONGOING PROJECTS</h2>
-            <div class="project-container">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <h3>Sohan Skypark</h3>
-                            <p>Jakkur, Bangalore</p>
-                        </div>
+            <h2 class="mission-vision-title">MISSION & VISION</h2>
+            <div class="mission-vision-underline"></div>
+            
+            <div class="mission-vision-grid">
+                <div class="vision-section">
+                    <div class="vision-content">
+                        <h3>Our Vision</h3>
+                        <p>Our vision is to be recognized as Bengaluru's leading real estate marketing and advisory firm, known for integrity, innovation, and excellence. We strive to create long-term relationships with our clients, transforming the property buying, selling, and investment experience into a seamless and satisfying journey.</p>
                     </div>
-                    <div class="project-content">
-                        <p>Premium 2 & 3 BHK apartments with world-class amenities in the heart of Jakkur.</p>
-                        <a href="#" class="btn" style="width: 100%; text-align: center;">View Details</a>
+                    <div class="vision-image"></div>
+                </div>
+                
+                <div class="mission-section">
+                    <div class="mission-content">
+                        <h3>Our Mission</h3>
+                        <p>At Sohan Realty, our mission is to empower homebuyers, investors, and commercial clients by providing transparent, reliable, and client-centric real estate solutions. We aim to simplify the property journey, helping our clients find the right property, at the right price, with confidence and ease.</p>
                     </div>
+                    <div class="mission-image"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Why Sohan Realty - Cards -->
     <section class="section section-secondary">
         <div class="container">
             <h2 class="section-title">Why Sohan Realty</h2>
@@ -530,105 +468,7 @@
         </div>
     </section>
 
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">TESTIMONIALS</h2>
-            <p class="text-center" style="font-size: 1.125rem; color: var(--muted-foreground); margin-bottom: 3rem;">What our satisfied customers say about us</p>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="testimonial-content">"Buying my flat at Sohan Skypark has been one of the best decisions of my life. The location in Jakkur is excellent — close to IT hubs, schools, and shopping, yet peaceful enough for family living. The apartments are spacious, vastu-compliant, and filled with natural light. The amenities make everyday life so much more comfortable. Truly a dream home come true!"</p>
-                    <div class="testimonial-author">
-                        <p class="author-name">Priya Sharma</p>
-                        <p class="author-location">Sohan Skypark Resident</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="testimonial-content">"I was looking for a home that blends luxury with convenience, and Sohan Skypark exceeded my expectations. The thoughtful design, quality construction, and premium finishes reflect the builder's commitment to excellence. The clubhouse and landscaped open spaces are perfect for family time. I feel proud to own a home here."</p>
-                    <div class="testimonial-author">
-                        <p class="author-name">Rajesh Kumar</p>
-                        <p class="author-location">Sohan Skypark Resident</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="testimonial-content">"From booking to handover, my experience with Sohan Realty at Sohan Skypark has been smooth and transparent. The team was professional, kept me updated, and delivered what was promised. The project truly lives up to its name with modern amenities, prime location, and great investment value. Highly recommended!"</p>
-                    <div class="testimonial-author">
-                        <p class="author-name">Anita Reddy</p>
-                        <p class="author-location">Sohan Skypark Resident</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="section section-secondary" id="blogs">
-        <div class="container">
-            <h2 class="section-title">BLOGS</h2>
-            <p class="text-center" style="font-size: 1.125rem; color: var(--muted-foreground); margin-bottom: 3rem;">Stay updated with the latest insights and trends in real estate</p>
-            
-            <div class="blogs-grid">
-                <div class="blog-card">
-                    <div class="blog-image"></div>
-                    <div class="blog-content">
-                        <p class="blog-date">📅 March 15, 2024</p>
-                        <h3 class="blog-title">Why Invest in an Apartment Project in Bangalore with Sohan Realty?</h3>
-                        <p class="blog-excerpt">Bangalore has firmly established itself as one of India's most promising real estate destinations. With its ever-growing IT sector, thriving start-up ecosystem, and strong infrastructure development...</p>
-                        <a href="./blog1.html" class="btn btn-outline">Read More →</a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image" style="background-image: url('/placeholder.svg?height=200&width=400');"></div>
-                    <div class="blog-content">
-                        <p class="blog-date">📅 March 10, 2024</p>
-                        <h3 class="blog-title">Why Invest in a Flat in Jakkur, Bangalore?</h3>
-                        <p class="blog-excerpt">Bangalore's real estate market has witnessed tremendous growth in the last decade, and one location that stands out for smart property investment is Jakkur...</p>
-                        <a href="./blog2.html" class="btn btn-outline">Read More →</a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image" style="background-image: url('/placeholder.svg?height=200&width=400');"></div>
-                    <div class="blog-content">
-                        <p class="blog-date">📅 March 5, 2024</p>
-                        <h3 class="blog-title">Apartment or Villa – Which is Better?</h3>
-                        <p class="blog-excerpt">One of the biggest dilemmas faced by modern homebuyers is deciding between an apartment and a villa. Both offer unique benefits and cater to different lifestyles...</p>
-                        <a href="./blog3.html]" class="btn btn-outline">Read More →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="#" class="btn">View All Blogs</a>
-            </div>
-        </div>
-    </section>
-        <footer class="main-footer">
+    <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-content">
                 <!-- Left Side - Brand & Contact -->
@@ -715,7 +555,8 @@
         </div>
     </footer>
 
-    <script>
+
+     <script>
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
@@ -737,5 +578,6 @@
             alert('Thank you for your interest! We will contact you soon.');
         });
     </script>
+
 </body>
 </html>
