@@ -282,7 +282,7 @@ footer {
     padding: 10px 0px;
     color: #fff;
     font-size: 10px;
-    text-align: center;
+    /* text-align: center; */
     padding: 0px;
     margin: 0px;
 }
@@ -4836,7 +4836,7 @@ button.btn.btn-danger.dbrochure {
 }
 
 .footer {
-    margin-bottom: 40px !important;
+    margin-bottom: 0px !important;
 }
 
 .gall-head {
@@ -4991,7 +4991,7 @@ button.btn.btn-danger.dbrochure {
     /* background: #136fb5; */
     padding: 10px 0 10px 0px;
     color: #fff;
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 60px;
     position: relative;
     display: inline-block;
