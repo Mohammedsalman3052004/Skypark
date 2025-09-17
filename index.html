@@ -416,19 +416,23 @@
         </div>
         
         <div class="mobile-menu" id="mobileMenu">
-            <a href="index.html" onclick="toggleMobileMenu()">Home</a>
-            <a href="about.html" onclick="toggleMobileMenu()">About Us</a>
-            <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
-            <div class="mobile-dropdown">
-                <a href="#sohan-skypark" onclick="toggleMobileMenu()">Sohan Skypark</a>
-            </div>
-            <a href="#blogs" onclick="toggleMobileMenu()">Blogs</a>
-            <a href="#channel-partners" onclick="toggleMobileMenu()">Channel Partners</a>
-            <a href="#land-proposals" onclick="toggleMobileMenu()">Land Proposals</a>
-            <a href="#careers" onclick="toggleMobileMenu()">Careers</a>
-            <a href="#contact" onclick="toggleMobileMenu()">Contact Us</a>
-            <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
-                📞 +91 8884456808
+            <!-- Added close button to mobile menu -->
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+            <div class="mobile-menu-content">
+                <a href="./index.html" onclick="toggleMobileMenu()">Home</a>
+                <a href="./about.html" onclick="toggleMobileMenu()">About Us</a>
+                <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+                <div class="mobile-dropdown">
+                    <a href="./skypark.html" onclick="toggleMobileMenu()">Sohan Skypark</a>
+                </div>
+                <a href="./blog_files/blog.html" onclick="toggleMobileMenu()">Blogs</a>
+                <a href="./channel_partner_files/channel_partner.html" onclick="toggleMobileMenu()">Channel Partners</a>
+                <a href="./land_proposals_files/land_proposals.html" onclick="toggleMobileMenu()">Land Proposals</a>
+                <a href="./career/career.html" onclick="toggleMobileMenu()">Careers</a>
+                <a href="./contactus/contactus.html" onclick="toggleMobileMenu()">Contact Us</a>
+                <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
+                    📞 +91 8884456808
+                </div>
             </div>
         </div>
     </nav>
@@ -486,7 +490,7 @@
                     </div>
                     <div class="project-content">
                         <p>Premium 2 & 3 BHK apartments with world-class amenities in the heart of Jakkur.</p>
-                        <a href="#" class="btn" style="width: 100%; text-align: center;">View Details</a>
+                        <a href="./skypark.html" class="btn" style="width: 100%; text-align: center;">View Details</a>
                     </div>
                 </div>
             </div>
@@ -737,5 +741,7 @@
             alert('Thank you for your interest! We will contact you soon.');
         });
     </script>
+
+    
 </body>
 </html>

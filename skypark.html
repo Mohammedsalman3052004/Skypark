@@ -524,6 +524,10 @@
   padding: 0.5rem 0;
   color: var(--accent);
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 </style>
 
@@ -548,19 +552,14 @@
             </a>
             
             <div class="nav-links">
-                <a href="./index.html">Home</a>
-                <a href="./about.html">About Us</a>
-                <div class="dropdown">
-                    <a href="#projects">Projects ⏷</a>
-                    <div class="dropdown-content">
-                        <a href="./skypark.html">Sohan Skypark</a>
-                    </div>
-                </div>
-                <a href="./blog_files/blog.html">Blogs</a>
-                <a href="./channel_partner_files/channel_partner.html">Channel Partners</a>
-                <a href="./land_proposals_files/land_proposals.html">Land Proposals</a>
-                <a href="./career/career.html">Careers</a>
-                <a href="./contactus/contactus.html">Contact Us</a>
+                <a href="#">Home</a>
+                <a href="#overview">Overview</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#Master-Plan">Master Plan</a>
+                <a href="#specifications">Specifications</a>
+                <a href="#location-new">Connectivity</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact-us">Contact Us</a>
             </div>
             
             <a href="tel:8884456808" class="phone-number">
@@ -571,16 +570,13 @@
         </div>
         
         <div class="mobile-menu" id="mobileMenu">
-            <a href="index.html" onclick="toggleMobileMenu()">Home</a>
-            <a href="about.html" onclick="toggleMobileMenu()">About Us</a>
-            <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
-            <div class="mobile-dropdown">
-                <a href="#sohan-skypark" onclick="toggleMobileMenu()">Sohan Skypark</a>
-            </div>
-            <a href="#blogs" onclick="toggleMobileMenu()">Blogs</a>
-            <a href="#channel-partners" onclick="toggleMobileMenu()">Channel Partners</a>
-            <a href="#land-proposals" onclick="toggleMobileMenu()">Land Proposals</a>
-            <a href="#careers" onclick="toggleMobileMenu()">Careers</a>
+            <a href="#" onclick="toggleMobileMenu()">Home</a>
+            <a href="#overview" onclick="toggleMobileMenu()">Overview</a>
+            <a href="#projects" onclick="toggleMobileMenu()">Amenities</a>
+            <a href="#Master-Plan" onclick="toggleMobileMenu()">Master Plan</a>
+            <a href="#specifications" onclick="toggleMobileMenu()">Specifications</a>
+            <a href="#location-new" onclick="toggleMobileMenu()">Connectivity</a>
+            <a href="#gallery" onclick="toggleMobileMenu()">Gallery</a>
             <a href="#contact" onclick="toggleMobileMenu()">Contact Us</a>
             <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
                 📞 +91 8884456808
@@ -640,7 +636,7 @@
 
 
 
-    <section class="glob-sec" style="text-align: center;" id="overview">
+    <section class="glob-sec" style="text-align: center;">
         <div class="container pd-0">
             <!-- <div class="col-md-12 wrap1">
                 <div class="col-md-12">
@@ -745,7 +741,7 @@
         </div>
     </section>
 
-    <section class="all-overview">
+    <section class="all-overview" id="overview">
         <div class="container">
             <div class="sec-title">
 
@@ -1343,7 +1339,7 @@
     </section> -->
 
 
-    <section class="master-plan">
+    <section class="master-plan" id="Master-Plan">
         <h1>Master Plan</h1>
         <div class="owl-item cloned master-plan-wrapper"
              style="width: 60rem; height: 40rem; margin-right: 10px;">
@@ -1366,7 +1362,7 @@
 
     <!-- gallery start -->
 
-    <section class="specifications-section">
+    <section class="specifications-section" id="specifications">
         <div class="container">
             <h2 class="section-title">SPECIFICATIONS</h2>
             
@@ -2340,7 +2336,7 @@
 
     <!-- about us ends -->
 
-    <section class="contact-map">
+    <section class="contact-map" id="contact-us">
         <div class="">
             <div class="col-md-6 pd0">
                 <iframe

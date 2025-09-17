@@ -555,19 +555,23 @@
         </div>
         
         <div class="mobile-menu" id="mobileMenu">
-            <a href="../index.html" onclick="toggleMobileMenu()">Home</a>
-            <a href="../about.html" onclick="toggleMobileMenu()">About Us</a>
-            <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
-            <div class="mobile-dropdown">
-                <a href="../skypark.html" onclick="toggleMobileMenu()">Sohan Skypark</a>
-            </div>
-            <a href="../blog_files/blog.html" onclick="toggleMobileMenu()">Blogs</a>
-            <a href="./channel_partner.html" onclick="toggleMobileMenu()">Channel Partners</a>
-            <a href="../land_proposals_files/land_proposals.html" onclick="toggleMobileMenu()">Land Proposals</a>
-            <a href="../career/career.html" onclick="toggleMobileMenu()">Careers</a>
-            <a href="../contactus/contactus.html" onclick="toggleMobileMenu()">Contact Us</a>
-            <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
-                📞 +91 8884456808
+            <!-- Added close button to mobile menu -->
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+            <div class="mobile-menu-content">
+                <a href="../index.html" onclick="toggleMobileMenu()">Home</a>
+                <a href="../about.html" onclick="toggleMobileMenu()">About Us</a>
+                <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+                <div class="mobile-dropdown">
+                    <a href="../skypark.html" onclick="toggleMobileMenu()">Sohan Skypark</a>
+                </div>
+                <a href="../blog_files/blog.html" onclick="toggleMobileMenu()">Blogs</a>
+                <a href="./channel_partner.html" onclick="toggleMobileMenu()">Channel Partners</a>
+                <a href="../land_proposals_files/land_proposals.html" onclick="toggleMobileMenu()">Land Proposals</a>
+                <a href="../career/career.html" onclick="toggleMobileMenu()">Careers</a>
+                <a href="../contactus/contactus.html" onclick="toggleMobileMenu()">Contact Us</a>
+                <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
+                    📞 +91 8884456808
+                </div>
             </div>
         </div>
     </nav>
@@ -1481,6 +1485,88 @@
 
     window.addEventListener('resize', handleResize);
     window.addEventListener('load', handleResize);
+</script>
+<!-- Mobile Menu JavaScript - Include this script in all pages with navbar -->
+<script>
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const body = document.body;
+    
+    // Toggle active class for smooth slide animation
+    mobileMenu.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (mobileMenu.classList.contains('active')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = '';
+    }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    // Check if click is outside menu and menu button
+    if (mobileMenu && menuBtn && 
+        !mobileMenu.contains(event.target) && 
+        !menuBtn.contains(event.target) && 
+        mobileMenu.classList.contains('active')) {
+        
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Close mobile menu when pressing Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+// Handle window resize - close mobile menu if screen becomes large
+window.addEventListener('resize', function() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (window.innerWidth >= 768 && mobileMenu && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Smooth scroll for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                
+                // Smooth scroll to target
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
 </script>
 </body>
 
