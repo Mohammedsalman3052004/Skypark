@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-     font-family: "Arial", sans-serif;
+     font-family: 'Times New Roman', Times, serif;
     
 }
 
@@ -30,7 +30,7 @@ body {
 
 .lato-light,
 .fw-light {
-     font-family: "Arial", sans-serif;
+     font-family: 'Times New Roman', Times, serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -53,32 +53,32 @@ body {
 
 .lato-regular,
 .fw-normal {
-     font-family: "Arial", sans-serif;
+     font-family: 'Times New Roman', Times, serif;
     font-weight: 400;
     font-style: normal;
 }
 
 .fw-semibold {
-     font-family: "Arial", sans-serif;
+     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
     font-style: normal;
 }
 
 .lato-bold,
 .fw-bold {
-     font-family: "Arial", sans-serif;
+     font-family: 'Times New Roman', Times, serif;
     font-weight: 700 !important;
     font-style: normal;
 }
 
 .lato-black {
-     font-family: "Arial", sans-serif;
+     font-family: 'Times New Roman', Times, serif;
     font-weight: 900;
     font-style: normal;
 }
 
 .lato-thin-italic {
-     font-family: "Arial", sans-serif;
+     font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
     font-style: italic;
 }
@@ -121,7 +121,7 @@ body {
 
 .overview .heading {
     text-transform: uppercase;
-    font-family: "Arial", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 35px;
     font-weight: 300;
     line-height: 42px;
@@ -132,7 +132,7 @@ body {
 }
 
 .main-heading h2, .b-imag  .heading-font {
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
     line-height: 42px;
     /*letter-spacing: 0.1em !important;*/
@@ -160,7 +160,7 @@ body {
 }
 
 .about {
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     font-weight: 500;
     line-height: 36px;
@@ -176,7 +176,7 @@ body {
 }
 
 p {
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     /* font-size: 18px; */
     font-weight: 400;
     line-height: 30px;
@@ -186,7 +186,7 @@ p {
 
 /*proejct*/
 .project-ceonte .project-title {
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     font-size: 27px;
     font-weight: 500;
     line-height: 28px;
@@ -237,7 +237,7 @@ p {
 }
 
 #g-sl .item .overlay h2 {
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     font-weight: 500;
     line-height: 42px;
@@ -307,7 +307,7 @@ p {
 }
 
 .blog-content .blog-title {
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: 400;
@@ -318,7 +318,7 @@ p {
 }
 
 .blog-content p {
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
@@ -358,7 +358,7 @@ p {
 /*footer*/
 .contact-text {
     color: white;
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     font-size: 32px;
     font-weight: 500;
     line-height: 36px;
@@ -394,7 +394,7 @@ p {
 
 .footer ul li a {
     line-height: 1.5;
-   font-family: "Arial", sans-serif;
+   font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;

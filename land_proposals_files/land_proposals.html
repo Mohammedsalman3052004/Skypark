@@ -45,7 +45,7 @@
             font-size: 18px !important;
             font-weight: 600 !important;
             margin-left: 20px !important;
-            font-family: "Arial, sans-serif" !important;
+            font-family: 'Times New Roman', Times, serif !important;
             color: #212529 !important
         }
 
@@ -411,560 +411,599 @@
         Generative AI powered Kenyt<a href="https://www.kenyt.ai/" rel="noopener nofollow" target="_blank">AI
             chatbot</a> or AI Assistant.</noscript>
 
-<style>
-    
-/* Container */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
+    <style>
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-/* Breadcrumb Section */
-.b-imag {
-   /* background-color: #76C043; */
-    padding: 40px 0;
-    color: white;
-    margin-bottom: 0;
-}
+        /* Breadcrumb Section */
+        .b-imag {
+            /* background-color: #76C043; */
+            padding: 40px 0;
+            color: white;
+            margin-bottom: 0;
+        }
 
-.b-imag .heading-font {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
+        .b-imag .heading-font {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-.b-imag div > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-}
+        .b-imag div>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
 
-.b-imag a {
-    color: rgba(255,255,255,0.9);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .b-imag a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-.b-imag a:hover {
-    color: #fff;
-}
+        .b-imag a:hover {
+            color: #fff;
+        }
 
-.b-imag img {
-    width: 16px;
-    height: 16px;
-    filter: brightness(0) invert(1);
-}
+        .b-imag img {
+            width: 16px;
+            height: 16px;
+            filter: brightness(0) invert(1);
+        }
 
-.post-page {
-    color: #fff;
-    font-weight: 500;
-}
+        .post-page {
+            color: #fff;
+            font-weight: 500;
+        }
 
-/* Main Content Sections */
-.section {
-    padding: 80px 0;
-}
+        /* Main Content Sections */
+        .section {
+            padding: 80px 0;
+        }
 
-.bg-light {
-    background-color: #fff;
-}
+        .bg-light {
+            background-color: #fff;
+        }
 
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-/* Headings */
-.main-heading h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-}
+        /* Headings */
+        .main-heading h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
 
-.main-heading h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: #76C043;
-    border-radius: 2px;
-}
+        .main-heading h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #76C043;
+            border-radius: 2px;
+        }
 
-/* Intro Text */
-.py-4 {
-    padding: 2rem 0;
-    font-size: 1.1rem;
-    color: #6c757d;
-    max-width: 800px;
-    margin: 0 auto;
-}
+        /* Intro Text */
+        .py-4 {
+            padding: 2rem 0;
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-/* Cards */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-}
+        /* Cards */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
 
-.col-lg-4 {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-    padding: 0 15px;
-}
+        .col-lg-4 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            padding: 0 15px;
+        }
 
-.mb-4 {
-    margin-bottom: 1.5rem;
-}
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
 
-.card-2 {
-    background: #fff;
-    border-radius: 15px;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    height: 100%;
-    border: 1px solid #e9ecef;
-}
+        .card-2 {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #e9ecef;
+        }
 
-.card-2:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
+        .card-2:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
 
-.card-2 img {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 25px;
-    display: block;
-    filter: hue-rotate(200deg);
-    transition: transform 0.3s ease;
-}
+        .card-2 img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            display: block;
+            filter: hue-rotate(200deg);
+            transition: transform 0.3s ease;
+        }
 
-.card-2:hover img {
-    transform: scale(1.1);
-}
+        .card-2:hover img {
+            transform: scale(1.1);
+        }
 
-.partner-content {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+        .partner-content {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-.text-justify {
-    text-align: justify;
-    color: #6c757d;
-    line-height: 1.7;
-}
+        .text-justify {
+            text-align: justify;
+            color: #6c757d;
+            line-height: 1.7;
+        }
 
-.px-3 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
+        .px-3 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
 
-/* Form Section */
-.section:last-child {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
+        /* Form Section */
+        .section:last-child {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="80" cy="80" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="40" cy="60" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.3);
-    width: 100%;
-}
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
 
-.contact-dark {
-    color: #fff !important;
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
+        .contact-dark {
+            color: #fff !important;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
 
-.text-dark {
-    color: #fff !important;
-}
+        .text-dark {
+            color: #fff !important;
+        }
 
-/* Form Styles */
-#land-form {
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 2;
-}
+        /* Form Styles */
+        #land-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
 
-.form-floating {
-    position: relative;
-}
+        .form-floating {
+            position: relative;
+        }
 
-.form-control {
-    border: 2px solid #e9ecef;
-    border-radius: 10px !important;
-    padding: 1rem 0.75rem;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: #fff;
-}
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 10px !important;
+            padding: 1rem 0.75rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #fff;
+        }
 
-.form-control:focus {
-    border-color: #76C043;
-    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-    outline: 0;
-}
+        .form-control:focus {
+            border-color: #76C043;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+            outline: 0;
+        }
 
-.form-floating label {
-    padding: 1rem 0.75rem;
-    color: #6c757d;
-    font-weight: 500;
-}
+        .form-floating label {
+            padding: 1rem 0.75rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
 
-select.form-control {
-    cursor: pointer;
-}
+        select.form-control {
+            cursor: pointer;
+        }
 
-/* Button */
-.btnn-ani {
-    background: #76C043;
-    color: #fff;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
+        /* Button */
+        .btnn-ani {
+            background: #76C043;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.btnn-ani:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-}
+        .btnn-ani:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
 
-.btnn-ani:active {
-    transform: translateY(0);
-}
+        .btnn-ani:active {
+            transform: translateY(0);
+        }
 
-.btnn-ani span {
-    position: relative;
-    z-index: 1;
-}
+        .btnn-ani span {
+            position: relative;
+            z-index: 1;
+        }
 
-.btnn-ani::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    /* background: linear-gradient(135deg, #764ba2, #667eea); */
-    transition: left 0.3s ease;
-}
+        .btnn-ani::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            /* background: linear-gradient(135deg, #764ba2, #667eea); */
+            transition: left 0.3s ease;
+        }
 
-.btnn-ani:hover::before {
-    left: 0;
-}
+        .btnn-ani:hover::before {
+            left: 0;
+        }
 
-/* Grid System */
-.col-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 0 15px;
-}
+        /* Grid System */
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 15px;
+        }
 
-.col-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0 15px;
-}
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0 15px;
+        }
 
-.offset-md-1 {
-    margin-left: 8.333333%;
-}
+        .offset-md-1 {
+            margin-left: 8.333333%;
+        }
 
-.col-md-10 {
-    flex: 0 0 83.333333%;
-    max-width: 83.333333%;
-}
+        .col-md-10 {
+            flex: 0 0 83.333333%;
+            max-width: 83.333333%;
+        }
 
-/* Utility Classes */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.d-block { display: block; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-.py-3 { padding-top: 1rem; padding-bottom: 1rem; }
-.my-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
-.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
-.w-25 { width: 25%; }
-.mb-3 { margin-bottom: 1rem; }
-.mb-lg-0 { margin-bottom: 0; }
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .d-block {
+            display: block;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+
+        .py-3 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .my-2 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .w-25 {
+            width: 25%;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-lg-0 {
+            margin-bottom: 0;
+        }
 
 
 
 
-.land-form {
-  gap: 1rem; /* spacing between fields */
-}
+        .land-form {
+            gap: 1rem;
+            /* spacing between fields */
+        }
 
-.land-form .form-floating {
-  /* flex: 1 1 200px;  */
-  min-width: 200px;
-}
+        .land-form .form-floating {
+            /* flex: 1 1 200px;  */
+            min-width: 200px;
+        }
 
-.land-form input,
-.land-form select {
-  height: 58px; /* consistent height with floating label */
-}
+        .land-form input,
+        .land-form select {
+            height: 58px;
+            /* consistent height with floating label */
+        }
 
-.land-form button {
-  height: 58px;
-  font-weight: 600;
-  border-radius: 8px;
-}
+        .land-form button {
+            height: 58px;
+            font-weight: 600;
+            border-radius: 8px;
+        }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .land-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .land-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
 
 
-/* Responsive Design */
 
-/* Large screens (desktops) */
-@media (max-width: 1199.98px) {
-    .main-heading h2 {
-        font-size: 2.2rem;
-    }
-    
-    .container {
-        max-width: 960px;
-    }
-}
 
-/* Medium screens (tablets) */
-@media (max-width: 991.98px) {
-    .col-lg-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 2rem;
-    }
-    
-    .main-heading h2 {
-        font-size: 2rem;
-    }
-    
-    .b-imag .heading-font {
-        font-size: 2rem;
-    }
-    
-    .section {
-        padding: 60px 0;
-    }
-    
-    .card-2 {
-        padding: 30px 20px;
-    }
-    
-    #land-form {
-        padding: 30px;
-    }
-    
-    .offset-md-1 {
-        margin-left: 0;
-    }
-    
-    .col-md-10 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
+        /* Responsive Design */
 
-/* Small screens (phones) */
-@media (max-width: 767.98px) {
-    .col-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    
-    .b-imag .heading-font {
-        font-size: 1.8rem;
-    }
-    
-    .main-heading h2 {
-        font-size: 1.8rem;
-    }
-    
-    .contact-dark {
-        font-size: 1.8rem;
-    }
-    
-    .section {
-        padding: 40px 0;
-    }
-    
-    .b-imag {
-        padding: 10px 0;
-    }
-    
-    .py-4 {
-        padding: 1.5rem 0;
-        font-size: 1rem;
-    }
-    
-    .card-2 {
-        padding: 25px 15px;
-    }
-    
-    .partner-content {
-        font-size: 1rem;
-    }
-    
-    #land-form {
-        padding: 25px;
-        border-radius: 15px;
-    }
-    
-    .btnn-ani {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
-    
-    .b-imag div > div {
-        flex-direction: column;
-        gap: 5px;
-        text-align: center;
-    }
-    
-    .form-control {
-        padding: 0.8rem 0.75rem;
-    }
-    
-    .form-floating label {
-        padding: 0.8rem 0.75rem;
-    }
-}
+        /* Large screens (desktops) */
+        @media (max-width: 1199.98px) {
+            .main-heading h2 {
+                font-size: 2.2rem;
+            }
 
-/* Extra small screens */
-@media (max-width: 575.98px) {
-    .container {
-        padding: 0 10px;
-    }
-    
-    .b-imag .heading-font {
-        font-size: 1.6rem;
-    }
-    
-    .main-heading h2 {
-        font-size: 1.6rem;
-    }
-    
-    .contact-dark {
-        font-size: 1.6rem;
-    }
-    
-    .card-2 img {
-        width: 60px;
-        height: 60px;
-    }
-    
-    #land-form {
-        padding: 20px;
-    }
-    
-    .btnn-ani {
-        padding: 10px 25px;
-        font-size: 0.9rem;
-    }
-    
-    .section:last-child {
-        background-attachment: scroll;
-    }
-}
+            .container {
+                max-width: 960px;
+            }
+        }
 
-/* Animation for cards */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Medium screens (tablets) */
+        @media (max-width: 991.98px) {
+            .col-lg-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
 
-.card-2 {
-    animation: fadeInUp 0.6s ease forwards;
-}
+            .main-heading h2 {
+                font-size: 2rem;
+            }
 
-.card-2:nth-child(2) {
-    animation-delay: 0.1s;
-}
+            .b-imag .heading-font {
+                font-size: 2rem;
+            }
 
-.card-2:nth-child(3) {
-    animation-delay: 0.2s;
-}
+            .section {
+                padding: 60px 0;
+            }
 
-/* Focus styles for accessibility */
-.form-control:focus,
-.btnn-ani:focus {
-    outline: 2px solid #667eea;
-    outline-offset: 2px;
-}
+            .card-2 {
+                padding: 30px 20px;
+            }
 
-/* Print styles */
-@media print {
-    .section:last-child {
-        background: #f8f9fa !important;
-    }
-    
-    .text-dark {
-        color: #333 !important;
-    }
-    
-    .btnn-ani {
-        background: #333 !important;
-    }
-}
-</style>
+            #land-form {
+                padding: 30px;
+            }
+
+            .offset-md-1 {
+                margin-left: 0;
+            }
+
+            .col-md-10 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* Small screens (phones) */
+        @media (max-width: 767.98px) {
+            .col-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .b-imag .heading-font {
+                font-size: 1.8rem;
+            }
+
+            .main-heading h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-dark {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .b-imag {
+                padding: 10px 0;
+            }
+
+            .py-4 {
+                padding: 1.5rem 0;
+                font-size: 1rem;
+            }
+
+            .card-2 {
+                padding: 25px 15px;
+            }
+
+            .partner-content {
+                font-size: 1rem;
+            }
+
+            #land-form {
+                padding: 25px;
+                border-radius: 15px;
+            }
+
+            .btnn-ani {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .b-imag div>div {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+
+            .form-control {
+                padding: 0.8rem 0.75rem;
+            }
+
+            .form-floating label {
+                padding: 0.8rem 0.75rem;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 575.98px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .b-imag .heading-font {
+                font-size: 1.6rem;
+            }
+
+            .main-heading h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact-dark {
+                font-size: 1.6rem;
+            }
+
+            .card-2 img {
+                width: 60px;
+                height: 60px;
+            }
+
+            #land-form {
+                padding: 20px;
+            }
+
+            .btnn-ani {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            .section:last-child {
+                background-attachment: scroll;
+            }
+        }
+
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-2 {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .card-2:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .card-2:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        /* Focus styles for accessibility */
+        .form-control:focus,
+        .btnn-ani:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .section:last-child {
+                background: #f8f9fa !important;
+            }
+
+            .text-dark {
+                color: #333 !important;
+            }
+
+            .btnn-ani {
+                background: #333 !important;
+            }
+        }
+    </style>
 
     <link rel="stylesheet" href="../navbar.css">
 </head>
 
-<body cz-shortcut-listen="true" >
+<body cz-shortcut-listen="true">
 
     <a href="https://wa.me/918884456808" class="whatsapp-logo">
         <!-- <img src="./whatsapp.jpeg" alt="" class="whatsapp-logo"> -->
@@ -992,12 +1031,12 @@ select.form-control {
     <!-- End Google Tag Manager (noscript) -->
 
 
-   <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="../index.html" class="logo">
                 <img src="../Skypark logo.svg" alt="" height="50px" width="250px">
             </a>
-            
+
             <div class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../about.html">About Us</a>
@@ -1013,14 +1052,14 @@ select.form-control {
                 <a href="../career/career.html">Careers</a>
                 <a href="../contactus/contactus.html">Contact Us</a>
             </div>
-            
+
             <a href="tel:8884456808" class="phone-number">
-                 +91 8884456808
+                +91 8884456808
             </a>
-            
+
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
-        
+
         <div class="mobile-menu" id="mobileMenu">
             <!-- Added close button to mobile menu -->
             <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
@@ -1032,12 +1071,13 @@ select.form-control {
                     <a href="../skypark.html" onclick="toggleMobileMenu()">Sohan Skypark</a>
                 </div>
                 <a href="../blog_files/blog.html" onclick="toggleMobileMenu()">Blogs</a>
-                <a href="../channel_partner_files/channel_partner.html" onclick="toggleMobileMenu()">Channel Partners</a>
+                <a href="../channel_partner_files/channel_partner.html" onclick="toggleMobileMenu()">Channel
+                    Partners</a>
                 <a style="color: #10b981;" href="./land_proposals.html" onclick="toggleMobileMenu()">Land Proposals</a>
                 <a href="../career/career.html" onclick="toggleMobileMenu()">Careers</a>
                 <a href="../contactus/contactus.html" onclick="toggleMobileMenu()">Contact Us</a>
                 <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
-                     +91 8884456808
+                    +91 8884456808
                 </div>
             </div>
         </div>
@@ -1082,7 +1122,10 @@ select.form-control {
             </div>
 
             <p class="py-4 text-center">
-                we believe in building enduring partnerships. For landowners, we offer lucrative opportunities to collaborate with us, whether through direct sales, long-term leases, or strategic joint ventures. By partnering with Sohan Realty, landowners gain access to our expertise, credibility, and market strength, ensuring not just profitable outcomes but also lasting, value-driven relationships.
+                we believe in building enduring partnerships. For landowners, we offer lucrative opportunities to
+                collaborate with us, whether through direct sales, long-term leases, or strategic joint ventures. By
+                partnering with Sohan Realty, landowners gain access to our expertise, credibility, and market strength,
+                ensuring not just profitable outcomes but also lasting, value-driven relationships.
             </p>
 
 
@@ -1094,7 +1137,10 @@ select.form-control {
                             alt="Luxury Villas for sale in Sarjapur Road" title="Luxury villas for sale in Sarjapur"
                             class="w-25 d-block mx-auto mb-3">
                         <p class="px-3 partner-content">Turn Your Land into a Valuable Opportunity</p>
-                        <p class="px-3 text-justify">If you own land with clear titles and paperwork, Sohan Reaalty offers you the perfect platform to unlock its true potential. Whether through outright purchase or collaborative development, we ensure your property is transformed into something truly remarkable.</p>
+                        <p class="px-3 text-justify">If you own land with clear titles and paperwork, Sohan Reaalty
+                            offers you the perfect platform to unlock its true potential. Whether through outright
+                            purchase or collaborative development, we ensure your property is transformed into something
+                            truly remarkable.</p>
                     </div>
                 </div>
 
@@ -1103,7 +1149,9 @@ select.form-control {
                         <img src="./Customer-Engagement.png" alt="2BHK apartments for sale in Bagalur"
                             title="2BHK Apartments near bagalur" class="w-25 d-block mx-auto mb-3">
                         <p class="px-3 partner-content ">Collaborate. Partner. Prosper.</p>
-                        <p class="px-3 text-justify">Not ready to sell? Partner with us instead. Through joint ventures or lease agreements, landowners can benefit from our expertise in planning, construction, and marketing — while sharing in the long-term rewards of premium developments.</p>
+                        <p class="px-3 text-justify">Not ready to sell? Partner with us instead. Through joint ventures
+                            or lease agreements, landowners can benefit from our expertise in planning, construction,
+                            and marketing — while sharing in the long-term rewards of premium developments.</p>
                     </div>
                 </div>
 
@@ -1112,7 +1160,10 @@ select.form-control {
                         <img src="./Price-Management.png" alt="Villas for sale  Sarjapur Road"
                             title="Spacious 5BHK villas in Sarjapur Road" class="w-25 d-block mx-auto mb-3">
                         <p class="px-3 partner-content ">A Relationship Built on Trust</p>
-                        <p class="px-3 text-justify" style="font-size: 14px;">With a reputation built on transparency, fairness, and credibility, Sohan Reaalty has become a name synonymous with trust. Every association — whether buying, leasing, or partnering — is designed to be mutually beneficial, ensuring lasting value for landowners and communities alike.</p>
+                        <p class="px-3 text-justify" style="font-size: 14px;">With a reputation built on transparency,
+                            fairness, and credibility, Sohan Reaalty has become a name synonymous with trust. Every
+                            association — whether buying, leasing, or partnering — is designed to be mutually
+                            beneficial, ensuring lasting value for landowners and communities alike.</p>
                     </div>
                 </div>
 
@@ -1141,35 +1192,36 @@ select.form-control {
 
                 </div>
 
-<div class="container my-4">
-  <form id="land-form" class="land-form d-flex flex-wrap align-items-center justify-content-center gap-3">
-    
-    <div class="form-floating">
-      <input type="text" class="form-control" id="nameInput" placeholder="Name" name="name">
-      <label for="nameInput">Name</label>
-    </div>
+                <div class="container my-4">
+                    <form id="land-form"
+                        class="land-form d-flex flex-wrap align-items-center justify-content-center gap-3">
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="emailInput" placeholder="Email" name="email">
-      <label for="emailInput">Email</label>
-    </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="nameInput" placeholder="Name" name="name">
+                            <label for="nameInput">Name</label>
+                        </div>
 
-    <div class="form-floating">
-      <input type="text" class="form-control" id="mobileInput" placeholder="Mobile" name="mobile">
-      <label for="mobileInput">Mobile</label>
-    </div>
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="emailInput" placeholder="Email" name="email">
+                            <label for="emailInput">Email</label>
+                        </div>
 
-    <div class="form-floating">
-      <select class="form-control" id="forInput" name="for">
-        <option value="Land Owner">Land Owner</option>
-        <option value="Broker">Broker</option>
-      </select>
-      <label for="forInput">Role</label>
-    </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="mobileInput" placeholder="Mobile" name="mobile">
+                            <label for="mobileInput">Mobile</label>
+                        </div>
 
-    <button type="submit" class="btn btn-success px-4">Get in Touch</button>
-  </form>
-</div>
+                        <div class="form-floating">
+                            <select class="form-control" id="forInput" name="for">
+                                <option value="Land Owner">Land Owner</option>
+                                <option value="Broker">Broker</option>
+                            </select>
+                            <label for="forInput">Role</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success px-4">Get in Touch</button>
+                    </form>
+                </div>
 
 
             </div>
@@ -1179,104 +1231,100 @@ select.form-control {
 
 
 
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <!-- Left Section - Company Info (No Changes) -->
-            <div class="footer-left">
-                <div class="logo">
-                    <img src="../Skypark logo.svg" alt="">
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Left Section - Company Info (No Changes) -->
+                <div class="footer-left">
+                    <div class="logo">
+                        <img src="../logo-new.png" alt="">
+                    </div>
+
+                    <div class="address-section">
+                        <h3>Address:</h3>
+                        <div class="address-info">
+                            G-1, Sohan RNR Icon, Near Alpine Eco Apartments,
+                            Doddanakundi Extension, Bengaluru, Karnataka 560 037
+                        </div>
+
+                        <div class="contact-info">
+                            <a href="tel:+918884456808" class="contact-item">
+                                📞 +91 8884456808
+                            </a>
+                            <a href="mailto:info@sohandevelopers.com" class="contact-item">
+                                ✉️ info@sohandevelopers.com
+                            </a>
+                        </div>
+
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <img src="../icons/facebook.svg" alt="" class="social-icon"
+                                    style="height: 40px; width: 40px;">
+                            </a>
+                            <a href="#" class="social-icon">
+                                <img src="../icons/social.svg" alt="" class="social-icon"
+                                    style="height: 40px; width: 40px;">
+                            </a>
+                            <!-- <a href="#" class="social-icon">🐦</a> -->
+                            <!-- <a href="#" class="social-icon">💼</a> -->
+                        </div>
+                    </div>
                 </div>
 
-                <div class="address-section">
-                    <h3>Address:</h3>
-                    <div class="address-info">
-                        G-1, Sohan RNR Icon, Near Alpine Eco Apartments,
-                        Doddanakundi Extension, Bengaluru, Karnataka 560 037
-                    </div>
+                <!-- Quick Links Section (Updated) -->
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../blog_files/blog.html">Blogs</a></li>
+                        <li><a href="../channel_partner_files/channel_partner.html">Channel Partners</a></li>
+                        <li><a href="./land_proposals.html">Land Proposals</a></li>
+                        <li><a href="../career/career.html">Career</a></li>
+                        <li><a href="../contactus/contactus.html">Contact Us</a></li>
+                    </ul>
+                </div>
 
-                    <div class="contact-info">
-                        <a href="tel:+918884456808" class="contact-item">
-                            📞 +91 8884456808
-                        </a>
-                        <a href="mailto:info@sohandevelopers.com" class="contact-item">
-                            ✉️ info@sohandevelopers.com
-                        </a>
-                    </div>
+                <!-- Get in Touch Form -->
+                <div class="contact-form">
+                    <h3>Get in Touch</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Last Name" required>
+                            </div>
+                        </div>
 
-                    <div class="social-icons">
-                        <a href="#" class="social-icon">
-                            <svg class="footer-social-icon" viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <svg class="footer-social-icon" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                        <!-- <a href="#" class="social-icon">🐦</a> -->
-                        <!-- <a href="#" class="social-icon">💼</a> -->
-                    </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <div class="phone-input-group">
+                                <input type="text" class="country-code" value="+91 🇮🇳" readonly>
+                                <input type="tel" class="form-input" placeholder="Enter your phone number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Quick Links Section (Updated) -->
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../about.html">About Us</a></li>
-                    <li><a href="../blog_files/blog.html">Blogs</a></li>
-                    <li><a href="../channel_partner_files/channel_partner.html">Channel Partners</a></li>
-                    <li><a href="./land_proposals.html">Land Proposals</a></li>
-                    <li><a href="../career/career.html">Career</a></li>
-                    <li><a href="../contactus/contactus.html">Contact Us</a></li>
-                </ul>
+            <!-- Footer Bottom (No Changes) -->
+            <div class="footer-divider"></div>
+            <div class="registration-info">
+                PRM/KA/RERA/1251/309/PR/181109/002131
             </div>
-
-            <!-- Get in Touch Form -->
-            <div class="contact-form">
-                <h3>Get in Touch</h3>
-                <form>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="First Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Last Name" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <div class="phone-input-group">
-                            <input type="text" class="country-code" value="+91 🇮🇳" readonly>
-                            <input type="tel" class="form-input" placeholder="Enter your phone number" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Enter your email" required>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
+            <div class="copyright">
+                Copyright © Sohan Realty 2025. All Rights Reserved.
             </div>
         </div>
-
-        <!-- Footer Bottom (No Changes) -->
-        <div class="footer-divider"></div>
-        <div class="registration-info">
-            PRM/KA/RERA/1251/309/PR/181109/002131
-        </div>
-        <div class="copyright">
-            Copyright © Sohan Realty 2025. All Rights Reserved.
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1716,78 +1764,78 @@ select.form-control {
 
         })
     </script>
-   
+
 
 
     <script>
-       // Correct ID based on your HTML
-const mobileMenuBtn = document.getElementById('mobileToggle');
-const mobileMenuOverlay = document.getElementById('mobileMenuOverlay'); // Ensure this exists in HTML
-let isMenuOpen = false;
+        // Correct ID based on your HTML
+        const mobileMenuBtn = document.getElementById('mobileToggle');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay'); // Ensure this exists in HTML
+        let isMenuOpen = false;
 
-mobileMenuBtn.addEventListener('click', function () {
-    isMenuOpen = !isMenuOpen;
+        mobileMenuBtn.addEventListener('click', function () {
+            isMenuOpen = !isMenuOpen;
 
-    if (isMenuOpen) {
-        mobileMenuBtn.classList.add('menu-open');
-        mobileMenuOverlay.classList.add('menu-active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    } else {
-        mobileMenuBtn.classList.remove('menu-open');
-        mobileMenuOverlay.classList.remove('menu-active');
-        document.body.style.overflow = 'auto'; // Enable scrolling
-    }
-});
-
-// Close menu when clicking outside
-mobileMenuOverlay.addEventListener('click', function (e) {
-    if (e.target === mobileMenuOverlay) {
-        isMenuOpen = false;
-        mobileMenuBtn.classList.remove('menu-open');
-        mobileMenuOverlay.classList.remove('menu-active');
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Handle menu item clicks
-const menuLinks = document.querySelectorAll('.navbar-menu-link, .mobile-menu-link');
-
-menuLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        // Remove active class from all links
-        document.querySelectorAll('.navbar-menu-link, .mobile-menu-link').forEach(l => {
-            l.classList.remove('active-link');
-        });
-
-        // Add active class to clicked link and its counterpart
-        const linkText = this.textContent;
-        document.querySelectorAll('.navbar-menu-link, .mobile-menu-link').forEach(l => {
-            if (l.textContent === linkText) {
-                l.classList.add('active-link');
+            if (isMenuOpen) {
+                mobileMenuBtn.classList.add('menu-open');
+                mobileMenuOverlay.classList.add('menu-active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                mobileMenuBtn.classList.remove('menu-open');
+                mobileMenuOverlay.classList.remove('menu-active');
+                document.body.style.overflow = 'auto'; // Enable scrolling
             }
         });
 
-        // Close mobile menu if open
-        if (isMenuOpen) {
-            isMenuOpen = false;
-            mobileMenuBtn.classList.remove('menu-open');
-            mobileMenuOverlay.classList.remove('menu-active');
-            document.body.style.overflow = 'auto';
-        }
-    });
-});
+        // Close menu when clicking outside
+        mobileMenuOverlay.addEventListener('click', function (e) {
+            if (e.target === mobileMenuOverlay) {
+                isMenuOpen = false;
+                mobileMenuBtn.classList.remove('menu-open');
+                mobileMenuOverlay.classList.remove('menu-active');
+                document.body.style.overflow = 'auto';
+            }
+        });
 
-// Handle window resize
-window.addEventListener('resize', function () {
-    if (window.innerWidth > 768 && isMenuOpen) {
-        isMenuOpen = false;
-        mobileMenuBtn.classList.remove('menu-open');
-        mobileMenuOverlay.classList.remove('menu-active');
-        document.body.style.overflow = 'auto';
-    }
-});
+        // Handle menu item clicks
+        const menuLinks = document.querySelectorAll('.navbar-menu-link, .mobile-menu-link');
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Remove active class from all links
+                document.querySelectorAll('.navbar-menu-link, .mobile-menu-link').forEach(l => {
+                    l.classList.remove('active-link');
+                });
+
+                // Add active class to clicked link and its counterpart
+                const linkText = this.textContent;
+                document.querySelectorAll('.navbar-menu-link, .mobile-menu-link').forEach(l => {
+                    if (l.textContent === linkText) {
+                        l.classList.add('active-link');
+                    }
+                });
+
+                // Close mobile menu if open
+                if (isMenuOpen) {
+                    isMenuOpen = false;
+                    mobileMenuBtn.classList.remove('menu-open');
+                    mobileMenuOverlay.classList.remove('menu-active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                isMenuOpen = false;
+                mobileMenuBtn.classList.remove('menu-open');
+                mobileMenuOverlay.classList.remove('menu-active');
+                document.body.style.overflow = 'auto';
+            }
+        });
 
         // Footer script
 

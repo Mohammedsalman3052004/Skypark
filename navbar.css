@@ -22,12 +22,25 @@ body {
 }
 /* Navigation */
 .navbar {
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: var(--primary-foreground);
   position: sticky;
   top: 0;
   z-index: 50;
   padding: 1rem;
+}
+.navbar::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+      radial-gradient(circle at 20% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(155, 89, 182, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .nav-container {
@@ -356,6 +369,7 @@ body {
   line-height: 1.6;
   margin-bottom: 15px;
   color: #bdc3c7;
+  font-size: 1rem;
 }
 
 .contact-info {
@@ -656,3 +670,11 @@ body {
     bottom: 30px;
   }
 } */
+
+
+
+
+.spec-img{
+  width: 50px;
+  height: 50px;
+}
