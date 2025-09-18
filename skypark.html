@@ -591,16 +591,19 @@ html {
         </div>
         
         <div class="mobile-menu" id="mobileMenu">
-            <a href="#" onclick="toggleMobileMenu()">Home</a>
-            <a href="#overview" onclick="toggleMobileMenu()">Overview</a>
-            <a href="#projects" onclick="toggleMobileMenu()">Amenities</a>
-            <a href="#Master-Plan" onclick="toggleMobileMenu()">Master Plan</a>
-            <a href="#specifications" onclick="toggleMobileMenu()">Specifications</a>
-            <a href="#location-new" onclick="toggleMobileMenu()">Connectivity</a>
-            <a href="#gallery" onclick="toggleMobileMenu()">Gallery</a>
-            <a href="#contact" onclick="toggleMobileMenu()">Contact Us</a>
-            <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
-                 +91 8884456808
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+            <div class="mobile-menu-content">
+                <a href="#" onclick="toggleMobileMenu()">Home</a>
+                <a href="#overview" onclick="toggleMobileMenu()">Overview</a>
+                <a href="#projects" onclick="toggleMobileMenu()">Amenities</a>
+                <a href="#Master-Plan" onclick="toggleMobileMenu()">Master Plan</a>
+                <a href="#specifications" onclick="toggleMobileMenu()">Specifications</a>
+                <a href="#location-new" onclick="toggleMobileMenu()">Connectivity</a>
+                <a href="#gallery" onclick="toggleMobileMenu()">Gallery</a>
+                <a href="#contact" onclick="toggleMobileMenu()">Contact Us</a>
+                <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
+                    +91 8884456808
+                </div>
             </div>
         </div>
     </nav>
@@ -4011,6 +4014,29 @@ html {
         }
     `;
     document.head.appendChild(style);
+</script>
+
+<script>
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+
+        if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+
+    // Handle form submission
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Thank you for your interest! We will contact you soon.');
+    });
 </script>
 
 

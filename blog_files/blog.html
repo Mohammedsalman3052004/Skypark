@@ -274,7 +274,7 @@
                 <div class="mobile-dropdown">
                     <a href="../skypark.html" onclick="toggleMobileMenu()">Sohan Skypark</a>
                 </div>
-                <a href="./blog.html" onclick="toggleMobileMenu()">Blogs</a>
+                <a style="color: #10b981;" href="./blog.html" onclick="toggleMobileMenu()">Blogs</a>
                 <a href="../channel_partner_files/channel_partner.html" onclick="toggleMobileMenu()">Channel
                     Partners</a>
                 <a href="../land_proposals_files/land_proposals.html" onclick="toggleMobileMenu()">Land Proposals</a>
@@ -465,6 +465,28 @@
             </div>
         </div>
     </footer>
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+
+            if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Handle form submission
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you soon.');
+        });
+    </script>
 </body>
 
 </html>

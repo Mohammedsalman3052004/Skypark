@@ -1134,7 +1134,7 @@ label.error {
 
     nav a {
         display: block;
-        text-align: center;
+        /* text-align: center; */
         border-bottom: 1px solid #f5ebe1;
         margin: 0px;
         padding: 12px 0;

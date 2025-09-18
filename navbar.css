@@ -174,7 +174,7 @@ body {
 .mobile-dropdown a {
   font-size: 1rem;
   padding: 0.5rem 0;
-  color: var(--accent);
+  /* color: var(--accent); */
 }
 
 /* Responsive Design */
@@ -641,3 +641,18 @@ body {
   z-index: 999;
   border-radius: 50%;
 }
+
+.active{
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .whatsapp-logo{
+    bottom: 30px;
+    right: 30px;
+  }
+}
+/* @media (max-width: 480px) {
+  .whatsapp-logo{
+    bottom: 30px;
+  }
+} */

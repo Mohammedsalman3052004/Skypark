@@ -823,7 +823,7 @@
                     Partners</a>
                 <a href="../land_proposals_files/land_proposals.html" onclick="toggleMobileMenu()">Land Proposals</a>
                 <a href="../career/career.html" onclick="toggleMobileMenu()">Careers</a>
-                <a href="./contactus.html" onclick="toggleMobileMenu()">Contact Us</a>
+                <a style="color: #10b981;" href="./contactus.html" onclick="toggleMobileMenu()">Contact Us</a>
                 <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 1rem;">
                     +91 8884456808
                 </div>
@@ -1225,6 +1225,29 @@
             this.reset();
         });
     </script>
+
+<script>
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+
+        if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+
+    // Handle form submission
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Thank you for your interest! We will contact you soon.');
+    });
+</script>
 </body>
 
 </html>
