@@ -79,6 +79,7 @@ body {
   font-weight: 500;
   transition: color 0.2s;
   position: relative;
+  text-transform: uppercase;
 }
 
 .nav-links a:hover {
