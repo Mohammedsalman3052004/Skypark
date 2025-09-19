@@ -2050,6 +2050,7 @@ pre code {
 .col-md-4,
 .col-md-5,
 .col-md-6,
+.col-md-6-2,
 .col-md-7,
 .col-md-8,
 .col-md-9,
@@ -2535,6 +2536,7 @@ pre code {
     .col-md-4,
     .col-md-5,
     .col-md-6,
+    .col-md-6-2,
     .col-md-7,
     .col-md-8,
     .col-md-9 {
@@ -2566,6 +2568,9 @@ pre code {
     }
 
     .col-md-6 {
+        width: 100%
+    }
+    .col-md-6-2 {
         width: 50%
     }
 

@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family:'Times New Roman', Times, serif !important;
+            font-family: 'Times New Roman', Times, serif !important;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
@@ -77,6 +77,7 @@
             margin-bottom: 20px;
             text-align: center;
             font-weight: 400;
+            text-transform: uppercase;
         }
 
         .position-item {
@@ -202,7 +203,7 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
         }
 
         .file-upload {
@@ -288,6 +289,13 @@
                 padding: 25px;
             }
         }
+
+        .pin-icon {
+            width: 16px;
+            height: 16px;
+            fill: #666;
+            transition: fill 0.3s ease;
+        }
     </style>
     <link rel="stylesheet" href="../navbar.css">
 </head>
@@ -330,13 +338,14 @@
                     </div>
                 </div>
                 <a href="../blog_files/blog.html">Blogs</a>
-                <a href="../channel_partner_files/channel_partner.html">Channel Partners</a>
-                <a href="../land_proposals_files/land_proposals.html">Land Proposals</a>
+                <!-- <a href="../channel_partner_files/channel_partner.html">Channel Partners</a> -->
+                <!-- <a href="../land_proposals_files/land_proposals.html">Land Proposals</a> -->
                 <a href="./career.html">Careers</a>
                 <a href="../contactus/contactus.html">Contact Us</a>
             </div>
 
             <a href="tel:8884456808" class="phone-number">
+                <img src="../icons/phone-call-icon.png" alt="" style="width: 28px; height: 28px; border-radius: 50%;">
                 +91 8884456808
             </a>
 
@@ -520,14 +529,19 @@
                         <label for="resume">Upload Resume</label>
                         <div class="file-upload">
                             <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
-                            <div class="file-upload-btn">Choose File</div>
+                            <div class="file-upload-btn">
+                                <svg class="pin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z" />
+                                </svg>
+                                Choose File
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message"
-                            placeholder="Tell us about yourself and why you're interested in this position..."></textarea>
+                            placeholder=""></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Submit Application</button>
@@ -558,20 +572,24 @@
 
                         <div class="contact-info">
                             <a href="tel:+918884456808" class="contact-item">
-                                📞 +91 8884456808
+                                <img src="../icons/phone.svg" alt="" style="height: 40px; width: 40px; margin: 0;">
+                                +91 8884456808
                             </a>
                             <a href="mailto:info@sohandevelopers.com" class="contact-item">
-                                ✉️ info@sohandevelopers.com
+                                <img src="../icons/envelope.svg" alt="" style="height: 40px; width: 40px; margin: 0;">
+                                info@sohandevelopers.com
                             </a>
                         </div>
 
                         <div class="social-icons">
                             <a href="#" class="social-icon">
-                                <img src="../icons/facebook.svg" alt="" class="social-icon" style="height: 40px; width: 40px;">
-                             </a>
-                             <a href="#" class="social-icon">
-                                 <img src="../icons/social.svg" alt="" class="social-icon" style="height: 40px; width: 40px;">
-                             </a>
+                                <img src="../icons/facebook.svg" alt="" class="social-icon"
+                                    style="height: 40px; width: 40px;">
+                            </a>
+                            <a href="#" class="social-icon">
+                                <img src="../icons/social.svg" alt="" class="social-icon"
+                                    style="height: 40px; width: 40px;">
+                            </a>
                             <!-- <a href="#" class="social-icon">🐦</a> -->
                             <!-- <a href="#" class="social-icon">💼</a> -->
                         </div>
@@ -607,7 +625,7 @@
 
                         <div class="form-group" style="margin-bottom: 20px;">
                             <div class="phone-input-group">
-                                <input type="text" class="country-code" value="+91 🇮🇳" readonly>
+                                <input type="text" class="country-code" value="+91 🇮🇳" readonly style="border: 1px solid black; color: black;">
                                 <input type="tel" class="form-input" placeholder="Enter your phone number" required>
                             </div>
                         </div>
