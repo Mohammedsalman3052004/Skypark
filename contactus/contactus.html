@@ -759,6 +759,8 @@
         }
     </style>
     <link rel="stylesheet" href="../navbar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -929,7 +931,7 @@
                 <div class="booking-form-section">
                     <h2 class="booking-form-title">GET IN TOUCH</h2>
 
-                    <form id="contactFormMain">
+                    <form method="POST" action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-contact-submit" id="contactFormMain">
                         <div class="form-input-row">
                             <div class="form-input-group">
                                 <label for="firstNameInput" class="form-required-field">First Name</label>
@@ -955,7 +957,7 @@
                         <div class="form-input-group">
                             <label for="messageInput">Message</label>
                             <textarea id="messageInput" name="message" class="form-textarea-field"
-                                placeholder="Tell us about your project requirements and how we can help you..."></textarea>
+                                placeholder=""></textarea>
                         </div>
 
                         <button type="submit" class="form-submit-button">Submit</button>
@@ -996,11 +998,13 @@
 
                         <div class="social-icons">
                             <a href="#" class="social-icon">
-                                <img src="../icons/facebook.svg" alt="" class="social-icon" style="height: 40px; width: 40px;">
-                             </a>
-                             <a href="#" class="social-icon">
-                                 <img src="../icons/social.svg" alt="" class="social-icon" style="height: 40px; width: 40px;">
-                             </a>
+                                <img src="../icons/facebook.svg" alt="" class="social-icon"
+                                    style="height: 40px; width: 40px;">
+                            </a>
+                            <a href="#" class="social-icon">
+                                <img src="../icons/social.svg" alt="" class="social-icon"
+                                    style="height: 40px; width: 40px;">
+                            </a>
                             <!-- <a href="#" class="social-icon">🐦</a> -->
                             <!-- <a href="#" class="social-icon">💼</a> -->
                         </div>
@@ -1036,7 +1040,8 @@
 
                         <div class="form-group" style="margin-bottom: 20px;">
                             <div class="phone-input-group">
-                                <input type="text" class="country-code" value="+91 🇮🇳" readonly style="border: 1px solid black; color: black;">
+                                <input type="text" class="country-code" value="+91 🇮🇳" readonly
+                                    style="border: 1px solid black; color: black;">
                                 <input type="tel" class="form-input" placeholder="Enter your phone number" required>
                             </div>
                         </div>
@@ -1061,10 +1066,8 @@
         </div>
     </footer>
 
-    <!-- footer scipt -->
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    </script>
 
 
     <!-- navbar script -->
@@ -1226,28 +1229,98 @@
         });
     </script>
 
-<script>
-    function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenu.classList.toggle('active');
-    }
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function (event) {
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-
-        if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-            mobileMenu.classList.remove('active');
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
         }
-    });
 
-    // Handle form submission
-    document.querySelector('form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Thank you for your interest! We will contact you soon.');
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+
+            if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Handle form submission
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you soon.');
+        });
+    </script>
+
+<script>
+    $(document).ready(function () {
+      $("#contactFormMain").submit(function (event) {
+        event.preventDefault();
+  
+        // Disable button and show loading state
+        const $button = $("#contactFormMain button[type='submit']");
+        $button.text("Please Wait...");
+        $button.attr("disabled", true);
+  
+        // Gather form data
+        const formData = {
+          firstName: $("#firstNameInput").val(),
+          lastName: $("#lastNameInput").val(),
+          email: $("#emailInput").val(),
+          phone: $("#phoneInput").val(),
+          message: $("#messageInput").val(),
+        };
+  
+        $.ajax({
+          type: "POST",
+          url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-contact-submit",
+          data: JSON.stringify(formData),
+          contentType: "application/json",
+          success: function (msg) {
+            $button.removeAttr("disabled").text("Submit");
+            let result;
+  
+            if (msg === "Email sent successfully") {
+              result =
+                '<p style="color:green; font-weight:600; font-size:16px; width:100%">Email Sent Successfully!</p>';
+              $("#contactFormMain")[0].reset();
+              $("#formNote").delay(5000).fadeOut();
+            } else {
+              result =
+                '<p style="color:red; font-weight:600; font-size:16px; width:100%">' +
+                msg +
+                "</p>";
+            }
+  
+            // Show result
+            if (!$("#formNote").length) {
+              $("#contactFormMain").prepend('<div id="formNote"></div>');
+            }
+            $("#formNote").html(result).show();
+          },
+          error: function () {
+            $button.removeAttr("disabled").text("Submit");
+            if (!$("#formNote").length) {
+              $("#contactFormMain").prepend('<div id="formNote"></div>');
+            }
+            $("#formNote")
+              .html(
+                '<p style="color:red; font-weight:600; font-size:16px; width:100%">Error sending email!</p>'
+              )
+              .show();
+          },
+        });
+  
+        return false;
+      });
     });
-</script>
+  </script>
+  
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
 </body>
 
 </html>
