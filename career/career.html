@@ -298,6 +298,8 @@
         }
     </style>
     <link rel="stylesheet" href="../navbar.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -469,7 +471,7 @@
             <div class="apply-section">
                 <h2 class="section-title">Apply Now</h2>
 
-                <form id="applicationForm">
+                <form method="POST" action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-career-submit" id="applicationForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -613,25 +615,30 @@
                 <!-- Get in Touch Form -->
                 <div class="contact-form">
                     <h3>Get in Touch</h3>
-                    <form>
+                    <form method="POST"
+                        action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit"
+                        id="footerForm">
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="text" class="form-input" placeholder="First Name" required>
+                                <input name="firstName" type="text" class="form-input" placeholder="First Name"
+                                    required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-input" placeholder="Last Name" required>
+                                <input name="lastName" type="text" class="form-input" placeholder="Last Name" required>
                             </div>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 20px;">
                             <div class="phone-input-group">
-                                <input type="text" class="country-code" value="+91 🇮🇳" readonly style="border: 1px solid black; color: black;">
-                                <input type="tel" class="form-input" placeholder="Enter your phone number" required>
+                                <input type="text" class="country-code" value="+91 🇮🇳" readonly
+                                    style="border: 1px solid black; color: black;">
+                                <input name="phone" type="tel" class="form-input" placeholder="Enter your phone number"
+                                    required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-input" placeholder="Enter your email" required>
+                            <input name="email" type="email" class="form-input" placeholder="Enter your email" required>
                         </div>
 
                         <button type="submit" class="submit-btn">Submit</button>
@@ -650,7 +657,212 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
     <script>
+        $(document).ready(function () {
+            $("#footerForm").submit(function (event) {
+                event.preventDefault();
+
+                // Disable button and show loading state
+                const $button = $(this).find("button[type='submit']");
+                $button.text("Please Wait...");
+                $button.attr("disabled", true);
+
+                // Gather form data - SCOPED TO THIS FORM ONLY
+                const formData = {
+                    firstName: $(this).find("input[name='firstName']").val(),
+                    lastName: $(this).find("input[name='lastName']").val(),
+                    phone: $(this).find("input[name='phone']").val(),
+                    email: $(this).find("input[name='email']").val()
+                };
+
+                // Debug: Log the form data to console
+                console.log("Footer Form Data:", formData);
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (msg) {
+                        $button.removeAttr("disabled").text("Submit");
+                        let result;
+
+                        if (msg === "Email sent successfully") {
+                            result =
+                                '<p style="color:green; font-weight:600; font-size:16px; width:100%">Email Sent Successfully!</p>';
+                            $("#footerForm")[0].reset();
+                            $("#footerFormNote").delay(5000).fadeOut();
+                        } else {
+                            result =
+                                '<p style="color:red; font-weight:600; font-size:16px; width:100%">' +
+                                msg +
+                                "</p>";
+                        }
+
+                        // Show result
+                        if (!$("#footerFormNote").length) {
+                            $("#footerForm").prepend('<div id="footerFormNote"></div>');
+                        }
+                        $("#footerFormNote").html(result).show();
+                    },
+                    error: function (xhr, status, error) {
+                        $button.removeAttr("disabled").text("Submit");
+                        console.log("Error:", error, "Status:", status, "Response:", xhr.responseText);
+
+                        if (!$("#footerFormNote").length) {
+                            $("#footerForm").prepend('<div id="footerFormNote"></div>');
+                        }
+                        $("#footerFormNote")
+                            .html(
+                                '<p style="color:red; font-weight:600; font-size:16px; width:100%">Error sending email!</p>'
+                            )
+                            .show();
+                    },
+                });
+
+                return false;
+            });
+        });
+    </script>
+
+<!-- 
+<script>
+    $(document).ready(function () {
+        $("#applicationForm").submit(function (event) {
+            event.preventDefault();
+
+            // Disable button and show loading state
+            const $button = $(this).find("button[type='submit']");
+            $button.text("Please Wait...");
+            $button.attr("disabled", true);
+
+            // Create FormData object to handle file upload
+            const formData = new FormData();
+            
+            // Add form fields to FormData - SCOPED TO THIS FORM ONLY
+            formData.append('name', $(this).find("input[name='name']").val());
+            formData.append('email', $(this).find("input[name='email']").val());
+            formData.append('countryCode', $(this).find("select[name='countryCode']").val());
+            formData.append('phone', $(this).find("input[name='phone']").val());
+            formData.append('city', $(this).find("input[name='city']").val());
+            formData.append('position', $(this).find("select[name='position']").val());
+            formData.append('experience', $(this).find("select[name='experience']").val());
+            formData.append('message', $(this).find("textarea[name='message']").val());
+            
+            // Add file if selected
+            const fileInput = $(this).find("input[name='resume']")[0];
+            if (fileInput.files.length > 0) {
+                formData.append('resume', fileInput.files[0]);
+                console.log("File selected:", fileInput.files[0].name, "Size:", fileInput.files[0].size, "bytes");
+            } else {
+                console.log("No file selected");
+            }
+
+            // Debug: Log the form data to console
+            console.log("Career Form Data being submitted...");
+            for (let pair of formData.entries()) {
+                if (pair[1] instanceof File) {
+                    console.log(pair[0] + ': ' + pair[1].name + ' (' + pair[1].size + ' bytes)');
+                } else {
+                    console.log(pair[0] + ': ' + pair[1]);
+                }
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-career-submit",
+                data: formData,
+                processData: false, // Important: Don't process the data
+                contentType: false, // Important: Don't set content type (let browser set it)
+                timeout: 60000, // 60 second timeout for file uploads
+                success: function (msg) {
+                    $button.removeAttr("disabled").text("Submit Application");
+                    let result;
+
+                    if (msg === "Email sent successfully") {
+                        result =
+                            '<p style="color:green; font-weight:600; font-size:16px; width:100%">✓ Application and resume submitted successfully!</p>';
+                        $("#applicationForm")[0].reset();
+                        $("#careerFormNote").delay(5000).fadeOut();
+                        
+                        // Show success message if exists
+                        if ($("#successMessage").length) {
+                            $("#successMessage").fadeIn();
+                        }
+                    } else {
+                        result =
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">✗ ' +
+                            msg +
+                            "</p>";
+                    }
+
+                    // Show result
+                    if (!$("#careerFormNote").length) {
+                        $("#applicationForm").prepend('<div id="careerFormNote"></div>');
+                    }
+                    $("#careerFormNote").html(result).show();
+                },
+                error: function (xhr, status, error) {
+                    $button.removeAttr("disabled").text("Submit Application");
+                    console.log("Error:", error, "Status:", status, "Response:", xhr.responseText);
+
+                    let errorMessage = "Error submitting application!";
+                    
+                    if (status === 'timeout') {
+                        errorMessage = "Upload timed out. Please check your connection and try again.";
+                    } else if (xhr.responseText) {
+                        errorMessage = xhr.responseText;
+                    }
+
+                    if (!$("#careerFormNote").length) {
+                        $("#applicationForm").prepend('<div id="careerFormNote"></div>');
+                    }
+                    $("#careerFormNote")
+                        .html(
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">✗ ' + errorMessage + '</p>'
+                        )
+                        .show();
+                },
+            });
+
+            return false;
+        });
+
+        // File validation on selection
+        $("input[name='resume']").change(function() {
+            const file = this.files[0];
+            
+            if (file) {
+                const fileSize = file.size / 1024 / 1024; // Convert to MB
+                const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                
+                console.log("File selected:", file.name, "Type:", file.type, "Size:", fileSize.toFixed(2) + "MB");
+                
+                // Check file size (5MB limit)
+                if (fileSize > 5) {
+                    alert('File too large! Please select a file smaller than 5MB.');
+                    $(this).val(''); // Clear the file input
+                    return;
+                }
+                
+                // Check file type
+                if (!allowedTypes.includes(file.type)) {
+                    alert('Invalid file type! Please select a PDF, DOC, or DOCX file.');
+                    $(this).val(''); // Clear the file input
+                    return;
+                }
+                
+                console.log("File validation passed ✓");
+            }
+        });
+    });
+</script> -->
+
+    <!-- <script>
         function togglePosition(button) {
             const content = button.nextElementSibling;
             const chevron = button.querySelector('.chevron');
@@ -704,7 +916,7 @@
                 successMessage.classList.remove('show');
             }, 5000);
         });
-    </script>
+    </script> -->
     <!-- navbar script -->
     <script>
         // Mobile Menu Functionality
@@ -846,11 +1058,101 @@
         });
 
         // Handle form submission
-        document.querySelector('form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Thank you for your interest! We will contact you soon.');
-        });
+        // document.querySelector('form').addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your interest! We will contact you soon.');
+        // });
     </script>
+
+
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#applicationForm").submit(function (event) {
+            event.preventDefault();
+
+            // Disable button and show loading state
+            const $button = $(this).find("button[type='submit']");
+            $button.text("Please Wait...");
+            $button.attr("disabled", true);
+
+            // Gather form data - SCOPED TO THIS FORM ONLY (excluding file upload)
+            const formData = {
+                name: $(this).find("input[name='name']").val(),
+                email: $(this).find("input[name='email']").val(),
+                countryCode: $(this).find("select[name='countryCode']").val(),
+                phone: $(this).find("input[name='phone']").val(),
+                city: $(this).find("input[name='city']").val(),
+                position: $(this).find("select[name='position']").val(),
+                experience: $(this).find("select[name='experience']").val(),
+                message: $(this).find("textarea[name='message']").val()
+            };
+
+            // Debug: Log the form data to console
+            console.log("Career Form Data:", formData);
+
+            $.ajax({
+                type: "POST",
+                url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-career-submit",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (msg) {
+                    $button.removeAttr("disabled").text("Submit Application");
+                    let result;
+
+                    if (msg === "Email sent successfully") {
+                        result =
+                            '<p style="color:green; font-weight:600; font-size:16px; width:100%">Application Sent Successfully!</p>';
+                        $("#applicationForm")[0].reset();
+                        $("#careerFormNote").delay(5000).fadeOut();
+                        
+                        // Show success message
+                        $("#successMessage").fadeIn();
+                    } else {
+                        result =
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">' +
+                            msg +
+                            "</p>";
+                    }
+
+                    // Show result
+                    if (!$("#careerFormNote").length) {
+                        $("#applicationForm").prepend('<div id="careerFormNote"></div>');
+                    }
+                    $("#careerFormNote").html(result).show();
+                },
+                error: function (xhr, status, error) {
+                    $button.removeAttr("disabled").text("Submit Application");
+                    console.log("Error:", error, "Status:", status, "Response:", xhr.responseText);
+
+                    if (!$("#careerFormNote").length) {
+                        $("#applicationForm").prepend('<div id="careerFormNote"></div>');
+                    }
+                    $("#careerFormNote")
+                        .html(
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">Error submitting application!</p>'
+                        )
+                        .show();
+                },
+            });
+
+            return false;
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
 
 </body>
 

@@ -250,29 +250,34 @@
             <!-- Get in Touch Form -->
             <div class="contact-form">
                 <h3>Get in Touch</h3>
-                <form>
-                    <div class="form-row">
+                <form method="POST"
+                        action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit"
+                        id="footerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input name="firstName" type="text" class="form-input" placeholder="First Name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input name="lastName" type="text" class="form-input" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <div class="phone-input-group">
+                                <input type="text" class="country-code" value="+91 🇮🇳" readonly
+                                    style="border: 1px solid black; color: black;">
+                                <input name="phone" type="tel" class="form-input" placeholder="Enter your phone number"
+                                    required>
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                            <input type="text" class="form-input" placeholder="First Name" required>
+                            <input name="email" type="email" class="form-input" placeholder="Enter your email" required>
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Last Name" required>
-                        </div>
-                    </div>
 
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <div class="phone-input-group">
-                            <input type="text" class="country-code" value="+91 🇮🇳" readonly style="border: 1px solid black; color: black;">
-                            <input type="tel" class="form-input" placeholder="Enter your phone number" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Enter your email" required>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
             </div>
         </div>
 
@@ -286,6 +291,80 @@
         </div>
     </div>
 </footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#footerForm").submit(function (event) {
+            event.preventDefault();
+
+            // Disable button and show loading state
+            const $button = $(this).find("button[type='submit']");
+            $button.text("Please Wait...");
+            $button.attr("disabled", true);
+
+            // Gather form data - SCOPED TO THIS FORM ONLY
+            const formData = {
+                firstName: $(this).find("input[name='firstName']").val(),
+                lastName: $(this).find("input[name='lastName']").val(),
+                phone: $(this).find("input[name='phone']").val(),
+                email: $(this).find("input[name='email']").val()
+            };
+
+            // Debug: Log the form data to console
+            console.log("Footer Form Data:", formData);
+
+            $.ajax({
+                type: "POST",
+                url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (msg) {
+                    $button.removeAttr("disabled").text("Submit");
+                    let result;
+
+                    if (msg === "Email sent successfully") {
+                        result =
+                            '<p style="color:green; font-weight:600; font-size:16px; width:100%">Email Sent Successfully!</p>';
+                        $("#footerForm")[0].reset();
+                        $("#footerFormNote").delay(5000).fadeOut();
+                    } else {
+                        result =
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">' +
+                            msg +
+                            "</p>";
+                    }
+
+                    // Show result
+                    if (!$("#footerFormNote").length) {
+                        $("#footerForm").prepend('<div id="footerFormNote"></div>');
+                    }
+                    $("#footerFormNote").html(result).show();
+                },
+                error: function (xhr, status, error) {
+                    $button.removeAttr("disabled").text("Submit");
+                    console.log("Error:", error, "Status:", status, "Response:", xhr.responseText);
+
+                    if (!$("#footerFormNote").length) {
+                        $("#footerForm").prepend('<div id="footerFormNote"></div>');
+                    }
+                    $("#footerFormNote")
+                        .html(
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">Error sending email!</p>'
+                        )
+                        .show();
+                },
+            });
+
+            return false;
+        });
+    });
+</script>
+
 
      <script>
         function toggleMobileMenu() {
@@ -304,10 +383,10 @@
         });
 
         // Handle form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your interest! We will contact you soon.');
-        });
+        // document.querySelector('form').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your interest! We will contact you soon.');
+        // });
     </script>
 
 

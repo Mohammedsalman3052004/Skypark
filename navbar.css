@@ -133,7 +133,7 @@ body {
 .mobile-menu-btn {
   background: none;
   border: none;
-  color: var(--primary-foreground);
+  color: black;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -512,7 +512,7 @@ body {
   /* border: 1px solid rgba(255, 255, 255, 0.2); */
   border: 1px solid black;
   border-radius: 8px;
-  color: white;
+  color: black;
   font-size: 14px;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);

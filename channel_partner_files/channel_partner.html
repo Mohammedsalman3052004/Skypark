@@ -27,8 +27,8 @@
     <!-- End Google Tag Manager -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://mjrbuilders.in/m-assets/img/fav.png" type="image/png">
-    <title>MJR Builders Channel Partner | Expand Opportunities &amp; Your Network</title>
+    <!-- <link rel="shortcut icon" href="https://mjrbuilders.in/m-assets/img/fav.png" type="image/png"> -->
+    <title>Shohan Realty | Channel Partner</title>
     <meta name="description"
         content="Become a Channel Partner with MJR Builders and expand your business opportunities, partnership benefits, network and offer top-quality real estate solutions.">
     <meta name="keywords" content="MJR Builders">
@@ -414,6 +414,7 @@
 
 
     </style>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
@@ -540,6 +541,7 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../navbar.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body cz-shortcut-listen="true">
@@ -810,7 +812,7 @@
                 <div class="offset-md-1 col-md-10  py-md-3  ">
                     <div class="text-center align-self-center   ">
                         <div class="">
-                            <form id="channel-form" class=" ">
+                            <form method="POST" action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-channel-submit" id="channel-form" class=" ">
                                 <div class="row">
                                     <div id="messages"></div>
                                     <div class="col-6">
@@ -846,7 +848,7 @@
                                         <div class="input-group mb-3 input-group-lg">
                                             <label class="input-group-text" for="inputGroupFile01">Upload Your
                                                 Portfolio</label>
-                                            <input type="file" class="form-control" id="inputGroupFile01"
+                                            <input type="file" accept=".pdf,.doc,.docx"  class="form-control" id="inputGroupFile01"
                                                 name="portfolio">
                                         </div>
                                     </div>
@@ -924,29 +926,34 @@
             <!-- Get in Touch Form -->
             <div class="contact-form">
                 <h3>Get in Touch</h3>
-                <form>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="First Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Last Name" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <div class="phone-input-group">
-                            <input type="text" class="country-code" value="+91 🇮🇳" readonly style="border: 1px solid black; color: black;">
-                            <input type="tel" class="form-input" placeholder="Enter your phone number" required>
-                        </div>
-                    </div>
-
+                <form method="POST"
+                action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit"
+                id="footerForm">
+                <div class="form-row">
                     <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Enter your email" required>
+                        <input name="firstName" type="text" class="form-input" placeholder="First Name"
+                            required>
                     </div>
+                    <div class="form-group">
+                        <input name="lastName" type="text" class="form-input" placeholder="Last Name" required>
+                    </div>
+                </div>
 
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <div class="phone-input-group">
+                        <input type="text" class="country-code" value="+91 🇮🇳" readonly
+                            style="border: 1px solid black; color: black;">
+                        <input name="phone" type="tel" class="form-input" placeholder="Enter your phone number"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input name="email" type="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
             </div>
         </div>
 
@@ -1363,7 +1370,7 @@
 
 
 
-    <script>
+    <!-- <script>
         document.getElementById('submitBtn').addEventListener('click', function (event) {
             event.preventDefault();
 
@@ -1415,7 +1422,7 @@
             }, 3000);
         }
 
-    </script>
+    </script> -->
 
 
   <!-- navbar script -->
@@ -1624,6 +1631,76 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#channel-form").submit(function (event) {
+            event.preventDefault();
+
+            // Disable button and show loading state
+            const $button = $("#submitBtn");
+            $button.find("span").text("Please Wait...");
+            $button.attr("disabled", true);
+
+            // Gather form data - SCOPED TO THIS FORM ONLY
+            const formData = {
+                name: $(this).find("input[name='name']").val(),
+                email: $(this).find("input[name='email']").val(),
+                mobile: $(this).find("input[name='mobile']").val(),
+                message: $(this).find("textarea[name='message']").val()
+            };
+
+            // Debug: Log the form data to console
+            console.log("Channel Form Data:", formData);
+
+            $.ajax({
+                type: "POST",
+                url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-channel-submit",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (msg) {
+                    $button.removeAttr("disabled");
+                    $button.find("span").text("GET IN Touch");
+                    let result;
+
+                    if (msg === "Email sent successfully") {
+                        result =
+                            '<p style="color:green; font-weight:600; font-size:16px; width:100%">Application Sent Successfully!</p>';
+                        $("#channel-form")[0].reset();
+                        $("#messages").delay(5000).fadeOut();
+                    } else {
+                        result =
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">' +
+                            msg +
+                            "</p>";
+                    }
+
+                    // Show result in the messages div
+                    $("#messages").html(result).show();
+                },
+                error: function (xhr, status, error) {
+                    $button.removeAttr("disabled");
+                    $button.find("span").text("GET IN Touch");
+                    console.log("Error:", error, "Status:", status, "Response:", xhr.responseText);
+
+                    $("#messages")
+                        .html(
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">Error submitting application!</p>'
+                        )
+                        .show();
+                },
+            });
+
+            return false;
+        });
+    });
+</script>
+
+
 </body>
 
 </html>

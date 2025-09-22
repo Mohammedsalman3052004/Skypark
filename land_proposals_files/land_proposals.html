@@ -29,8 +29,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./all.min.css" rel="stylesheet">
     <link href="./css2(1)" rel="stylesheet">
-    <link rel="shortcut icon" href="https://mjrbuilders.in/m-assets/img/fav.png" type="image/png">
-    <title>MJR Builders Land Proposals | Get Locations for Your Next Project</title>
+    <!-- <link rel="shortcut icon" href="https://mjrbuilders.in/m-assets/img/fav.png" type="image/png"> -->
+    <title>Sohan Realty | Land Proposals</title>
     <meta name="description"
         content="Explore land proposals from MJR Builders for locations perfect for your next project, valuable opportunities and secure the ideal site for your development.">
     <meta name="keywords" content="MJR Builders">
@@ -1194,7 +1194,9 @@
                 </div>
 
                 <div class="container my-4">
-                    <form id="land-form"
+                    <form method="POST"
+                        action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-land-submit"
+                        id="land-form"
                         class="land-form d-flex flex-wrap align-items-center justify-content-center gap-3">
 
                         <div class="form-floating">
@@ -1229,7 +1231,7 @@
         </div>
     </section>
 
-
+    `
 
 
     <!-- Footer Section -->
@@ -1292,25 +1294,30 @@
                 <!-- Get in Touch Form -->
                 <div class="contact-form">
                     <h3>Get in Touch</h3>
-                    <form>
+                    <form method="POST"
+                        action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit"
+                        id="footerForm">
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="text" class="form-input" placeholder="First Name" required>
+                                <input name="firstName" type="text" class="form-input" placeholder="First Name"
+                                    required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-input" placeholder="Last Name" required>
+                                <input name="lastName" type="text" class="form-input" placeholder="Last Name" required>
                             </div>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 20px;">
                             <div class="phone-input-group">
-                                <input type="text" class="country-code" value="+91 🇮🇳" readonly style="border: 1px solid black; color: black;">
-                                <input type="tel" class="form-input" placeholder="Enter your phone number" required>
+                                <input type="text" class="country-code" value="+91 🇮🇳" readonly
+                                    style="border: 1px solid black; color: black;">
+                                <input name="phone" type="tel" class="form-input" placeholder="Enter your phone number"
+                                    required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-input" placeholder="Enter your email" required>
+                            <input name="email" type="email" class="form-input" placeholder="Enter your email" required>
                         </div>
 
                         <button type="submit" class="submit-btn">Submit</button>
@@ -1399,6 +1406,83 @@
     <script defer="" src="./jquery.fancybox.min.js.download"></script>
 
     <link rel="stylesheet" href="./all(1).min.css">
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#footerForm").submit(function (event) {
+                event.preventDefault();
+
+                // Disable button and show loading state
+                const $button = $(this).find("button[type='submit']");
+                $button.text("Please Wait...");
+                $button.attr("disabled", true);
+
+                // Gather form data - SCOPED TO THIS FORM ONLY
+                const formData = {
+                    firstName: $(this).find("input[name='firstName']").val(),
+                    lastName: $(this).find("input[name='lastName']").val(),
+                    phone: $(this).find("input[name='phone']").val(),
+                    email: $(this).find("input[name='email']").val()
+                };
+
+                // Debug: Log the form data to console
+                console.log("Footer Form Data:", formData);
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (msg) {
+                        $button.removeAttr("disabled").text("Submit");
+                        let result;
+
+                        if (msg === "Email sent successfully") {
+                            result =
+                                '<p style="color:green; font-weight:600; font-size:16px; width:100%">Email Sent Successfully!</p>';
+                            $("#footerForm")[0].reset();
+                            $("#footerFormNote").delay(5000).fadeOut();
+                        } else {
+                            result =
+                                '<p style="color:red; font-weight:600; font-size:16px; width:100%">' +
+                                msg +
+                                "</p>";
+                        }
+
+                        // Show result
+                        if (!$("#footerFormNote").length) {
+                            $("#footerForm").prepend('<div id="footerFormNote"></div>');
+                        }
+                        $("#footerFormNote").html(result).show();
+                    },
+                    error: function (xhr, status, error) {
+                        $button.removeAttr("disabled").text("Submit");
+                        console.log("Error:", error, "Status:", status, "Response:", xhr.responseText);
+
+                        if (!$("#footerFormNote").length) {
+                            $("#footerForm").prepend('<div id="footerFormNote"></div>');
+                        }
+                        $("#footerFormNote")
+                            .html(
+                                '<p style="color:red; font-weight:600; font-size:16px; width:100%">Error sending email!</p>'
+                            )
+                            .show();
+                    },
+                });
+
+                return false;
+            });
+        });
+    </script>
+
 
     <script>
         function carouselInit() {
@@ -1910,11 +1994,81 @@
         });
 
         // Handle form submission
-        document.querySelector('form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Thank you for your interest! We will contact you soon.');
-        });
+        // document.querySelector('form').addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your interest! We will contact you soon.');
+        // });
     </script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#land-form").submit(function (event) {
+            event.preventDefault();
+
+            // Disable button and show loading state
+            const $button = $(this).find("button[type='submit']");
+            $button.text("Please Wait...");
+            $button.attr("disabled", true);
+
+            // Gather form data - SCOPED TO THIS FORM ONLY
+            const formData = {
+                name: $(this).find("input[name='name']").val(),
+                email: $(this).find("input[name='email']").val(),
+                mobile: $(this).find("input[name='mobile']").val(),
+                for: $(this).find("select[name='for']").val()
+            };
+
+            // Debug: Log the form data to console
+            console.log("Land Form Data:", formData);
+
+            $.ajax({
+                type: "POST",
+                url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-land-submit",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (msg) {
+                    $button.removeAttr("disabled").text("Get in Touch");
+                    let result;
+
+                    if (msg === "Email sent successfully") {
+                        result =
+                            '<p style="color:green; font-weight:600; font-size:16px; width:100%">Email Sent Successfully!</p>';
+                        $("#land-form")[0].reset();
+                        $("#landFormNote").delay(5000).fadeOut();
+                    } else {
+                        result =
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">' +
+                            msg +
+                            "</p>";
+                    }
+
+                    // Show result
+                    if (!$("#landFormNote").length) {
+                        $("#land-form").prepend('<div id="landFormNote"></div>');
+                    }
+                    $("#landFormNote").html(result).show();
+                },
+                error: function (xhr, status, error) {
+                    $button.removeAttr("disabled").text("Get in Touch");
+                    console.log("Error:", error, "Status:", status, "Response:", xhr.responseText);
+
+                    if (!$("#landFormNote").length) {
+                        $("#land-form").prepend('<div id="landFormNote"></div>');
+                    }
+                    $("#landFormNote")
+                        .html(
+                            '<p style="color:red; font-weight:600; font-size:16px; width:100%">Error sending email!</p>'
+                        )
+                        .show();
+                },
+            });
+
+            return false;
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -61,319 +61,320 @@
         }
     </style>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        color: #333;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-    .specifications-section {
-        background-color: #f5f1eb;
-        padding: 80px 0;
-        position: relative;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #4a4a4a;
-        margin-bottom: 60px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-    }
-
-    .specifications-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 40px;
-        align-items: start;
-    }
-
-    .spec-item {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 180px;
-    }
-
-    .spec-icon {
-        width: 70px;
-        height: 70px;
-        background-color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 25px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-
-    .spec-icon:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .spec-icon svg {
-        width: 40px;
-        height: 40px;
-        stroke: #666;
-        fill: none;
-        stroke-width: 2;
-    }
-
-    .spec-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #4a4a4a;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .spec-details {
-        font-size: 0.9rem;
-        color: #666;
-        line-height: 1.6;
-        max-width: 250px;
-    }
-
-    .spec-details ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .spec-details li {
-        margin-bottom: 8px;
-        position: relative;
-        padding-left: 15px;
-    }
-
-    .spec-details li::before {
-        content: '•';
-        position: absolute;
-        left: 0;
-        color: #888;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
         .specifications-section {
-            padding: 60px 0;
+            background-color: #f5f1eb;
+            padding: 80px 0;
+            position: relative;
         }
-        
+
         .container {
-            padding: 0 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
+
         .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            letter-spacing: 2px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4a4a4a;
+            margin-bottom: 60px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
-        
+
         .specifications-grid {
-            grid-template-columns: 2fr;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+
+        .spec-item {
+            text-align: center;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            width: 180px;
         }
-        
+
         .spec-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
-        
+
+        .spec-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
         .spec-icon svg {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
+            stroke: #666;
+            fill: none;
+            stroke-width: 2;
         }
-        
+
         .spec-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        
+
         .spec-details {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            max-width: 250px;
         }
-    }
 
-    /* Tablet Responsive */
-    @media (max-width: 1024px) and (min-width: 769px) {
-        .specifications-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 35px;
+        .spec-details ul {
+            list-style: none;
+            padding: 0;
         }
-    }
 
-    /* Large Desktop */
-    @media (min-width: 1200px) {
-        .specifications-grid {
-            grid-template-columns: repeat(5, 1fr);
+        .spec-details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
         }
-    }
 
-    .submit-btn{
-        border-radius: 10px;
-        background-color: #76C043;
-        color: #fff;
-        padding: 10px 20px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
+        .spec-details li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #888;
+        }
 
-    .master-plan{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-    .footer-link{
-        /* text-align: left; */
-    }
-   
-    
-</style>
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .specifications-section {
+                padding: 60px 0;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+                letter-spacing: 2px;
+            }
+
+            .specifications-grid {
+                grid-template-columns: 2fr;
+                gap: 30px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .spec-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .spec-icon svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .spec-title {
+                font-size: 1rem;
+            }
+
+            .spec-details {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Tablet Responsive */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .specifications-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+        }
+
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .specifications-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .submit-btn {
+            border-radius: 10px;
+            background-color: #76C043;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .master-plan {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .footer-link {
+            /* text-align: left; */
+        }
+    </style>
 
 
-<style>
-    .master-plan {
-        text-align: center;
-        padding: 2rem;
-        font-family:'Times New Roman', Times, serif;
-    }
-
-    .master-plan h1 {
-        font-size: 2.5rem;
-        color: #333;
-        margin-bottom: 2rem;
-        font-weight: 300;
-    }
-
-    .owl-item {
-        position: relative;
-        display: inline-block;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .owl-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .master-plan-wrapper {
-        position: relative;
-        cursor: pointer;
-    }
-
-    .master-plan-wrapper > div {
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-    }
-
-    .link-overlay-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(2px);
-    }
-
-    .master-plan-wrapper:hover .link-overlay-wrapper {
-        opacity: 1;
-    }
-
-    .link-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.9);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .link-icon:hover {
-        background-color: #fff;
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    }
-
-    .link-icon a {
-        color: #333;
-        text-decoration: none;
-        font-size: 1.2rem;
-        transition: color 0.3s ease;
-    }
-
-    .link-icon:hover a {
-        color: #007bff;
-    }
-
-    .wrapp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .cloned {
-        /* Additional styling for cloned items if needed */
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .owl-item {
-            width: 90% !important;
-            height: 30rem !important;
+    <style>
+        .master-plan {
+            text-align: center;
+            padding: 2rem;
+            font-family: 'Times New Roman', Times, serif;
         }
 
         .master-plan h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .owl-item {
+            position: relative;
+            display: inline-block;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .owl-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .master-plan-wrapper {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .master-plan-wrapper>div {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .link-overlay-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        .master-plan-wrapper:hover .link-overlay-wrapper {
+            opacity: 1;
         }
 
         .link-icon {
-            width: 3rem;
-            height: 3rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-icon:hover {
+            background-color: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         .link-icon a {
-            font-size: 1rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
         }
-        #gallery{
-            display: none;
+
+        .link-icon:hover a {
+            color: #007bff;
         }
-        .ame-list{
-            margin-left: 2rem;
+
+        .wrapp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
         }
-    }
-</style>
+
+        .cloned {
+            /* Additional styling for cloned items if needed */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .owl-item {
+                width: 90% !important;
+                height: 30rem !important;
+            }
+
+            .master-plan h1 {
+                font-size: 2rem;
+            }
+
+            .link-icon {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            .link-icon a {
+                font-size: 1rem;
+            }
+
+            #gallery {
+                display: none;
+            }
+
+            .ame-list {
+                margin-left: 2rem;
+            }
+        }
+    </style>
 
 
 
@@ -384,159 +385,157 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-<style>
-    /* Color Variables */
-:root {
-  --primary: #1e2a38;
-  --primary-foreground: #ffffff;
-  --secondary: #f8f6f0;
-  --accent: #10b981;
-  --accent-foreground: #ffffff;
-  --background: #ffffff;
-  --muted-foreground: #6b7280;
-  --orange: #f97316;
-}
+    <style>
+        /* Color Variables */
+        :root {
+            --primary: #1e2a38;
+            --primary-foreground: #ffffff;
+            --secondary: #f8f6f0;
+            --accent: #10b981;
+            --accent-foreground: #ffffff;
+            --background: #ffffff;
+            --muted-foreground: #6b7280;
+            --orange: #f97316;
+        }
 
-/* Navigation */
-.navbar {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
+        /* Navigation */
+        .navbar {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
 
-.nav-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-}
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-.logo .accent {
-  color: var(--accent);
-}
+        .logo .accent {
+            color: var(--accent);
+        }
 
-.nav-links {
-  display: none;
-  gap: 2rem;
-  align-items: center;
-}
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            align-items: center;
+        }
 
-.nav-links a {
-  color: var(--primary-foreground);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-  position: relative;
-}
+        .nav-links a {
+            color: var(--primary-foreground);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
 
-.nav-links a:hover {
-  color: var(--accent);
-}
+        .nav-links a:hover {
+            color: var(--accent);
+        }
 
-/* Added dropdown functionality for Projects menu */
-.dropdown {
-  position: relative;
-}
+        /* Added dropdown functionality for Projects menu */
+        .dropdown {
+            position: relative;
+        }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--primary);
-  min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 0.375rem;
-  margin-top: 0.2rem;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 0.375rem;
+            margin-top: 0.2rem;
+        }
 
-.dropdown-content a {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: var(--primary-foreground);
-  text-decoration: none;
-  transition: background-color 0.2s;
-}
+        .dropdown-content a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--primary-foreground);
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
 
-.dropdown-content a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--accent);
-}
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+        }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-.phone-number {
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: white;
-}
+        .phone-number {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+        }
 
-.mobile-menu-btn {
-  background: none;
-  border: none;
-  color: var(--primary-foreground);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: var(--primary-foreground);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100vh;
-  background-color: var(--primary);
-  padding: 2rem;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-}
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--primary);
+            padding: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
 
-.mobile-menu.active {
-  transform: translateX(0);
-}
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
 
-.mobile-menu a {
-  display: block;
-  color: var(--primary-foreground);
-  text-decoration: none;
-  padding: 1rem 0;
-  font-size: 1.1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
+        .mobile-menu a {
+            display: block;
+            color: var(--primary-foreground);
+            text-decoration: none;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-/* Added mobile dropdown for projects */
-.mobile-dropdown {
-  padding-left: 1rem;
-}
+        /* Added mobile dropdown for projects */
+        .mobile-dropdown {
+            padding-left: 1rem;
+        }
 
-.mobile-dropdown a {
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  color: var(--accent);
-}
-html {
-  scroll-behavior: smooth;
-}
+        .mobile-dropdown a {
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            color: var(--accent);
+        }
 
-
-
-</style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 
     <link rel="stylesheet" href="./navbar.css">
 </head>
@@ -571,14 +570,14 @@ html {
 
     <!--test-->
 
-   
-     <!-- Navigation -->
+
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="./index.html" class="logo">
                 <img src="./Skypark logo.svg" alt="" height="50px" width="250px">
             </a>
-            
+
             <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#overview">Overview</a>
@@ -589,15 +588,15 @@ html {
                 <a href="#gallery">Gallery</a>
                 <a href="#contact-us">Contact Us</a>
             </div>
-            
+
             <a href="tel:8884456808" class="phone-number">
                 <img src="./icons/phone-call-icon.png" alt="" style="width: 28px; height: 28px; border-radius: 50%;">
                 +91 8884456808
             </a>
-            
+
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
-        
+
         <div class="mobile-menu" id="mobileMenu">
             <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
             <div class="mobile-menu-content">
@@ -622,31 +621,38 @@ html {
 
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="d-banner" src="./Images/banner 66.webp" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                    <img class="d-banner" src="./Images/banner 66.webp" alt="banner"
+                        style="width: 100%; margin-top:-11px !important;">
                     <img class="m-banner" src="./Images/banner 66.webp" alt="banner" style="width: 100%">
                 </div>
                 <div class="item">
-                    <img class="d-banner" src="./Images/banner 4.webp" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                    <img class="d-banner" src="./Images/banner 4.webp" alt="banner"
+                        style="width: 100%; margin-top:-11px !important;">
                     <img class="m-banner" src="./Images/banner 4.webp" alt="banner" style="width: 100%">
                 </div>
                 <div class="item">
-                    <img class="d-banner" src="./Images/banner 1.webp" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                    <img class="d-banner" src="./Images/banner 1.webp" alt="banner"
+                        style="width: 100%; margin-top:-11px !important;">
                     <img class="m-banner" src="./Images/banner 1.webp" alt="banner" style="width: 100%">
                 </div>
                 <div class="item">
-                    <img class="d-banner" src="./Images/banner 3.webp" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                    <img class="d-banner" src="./Images/banner 3.webp" alt="banner"
+                        style="width: 100%; margin-top:-11px !important;">
                     <img class="m-banner" src="./Images/banner 3.webp" alt="banner" style="width: 100%">
                 </div>
                 <div class="item">
-                    <img class="d-banner" src="./Images/banner 2.webp" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                    <img class="d-banner" src="./Images/banner 2.webp" alt="banner"
+                        style="width: 100%; margin-top:-11px !important;">
                     <img class="m-banner" src="./Images/banner 2.webp" alt="banner" style="width: 100%">
                 </div>
                 <div class="item">
-                    <img class="d-banner" src="./Images/banner 1.webp" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                    <img class="d-banner" src="./Images/banner 1.webp" alt="banner"
+                        style="width: 100%; margin-top:-11px !important;">
                     <img class="m-banner" src="./Images/banner 1.webp" alt="banner" style="width: 100%">
                 </div>
                 <div class="item">
-                    <img class="d-banner" src="./Images/banner 3.webp" alt="banner" style="width: 100%; margin-top:-11px !important;">
+                    <img class="d-banner" src="./Images/banner 3.webp" alt="banner"
+                        style="width: 100%; margin-top:-11px !important;">
                     <img class="m-banner" src="./Images/banner 3.webp" alt="banner" style="width: 100%">
                 </div>
 
@@ -715,8 +721,8 @@ html {
                                 </p>
                                 <h4 class="modal-title tits visible-xs" id="register-desk"><b>Contact Us!</b>
                                 </h4>
-                                <form class="row form-wrap-brch" action="./thankyou/thankyou.html"
-                                    method="GET" id="float-form" name="float-form" novalidate="novalidate">
+                                <form class="row form-wrap-brch" action="./thankyou/thankyou.html" method="GET"
+                                    id="float-form" name="float-form" novalidate="novalidate">
                                     <div class="col-xl-12">
                                         <div class="frm-gro">
                                             <div class="form-group wow fadeInUp"
@@ -785,14 +791,16 @@ html {
             <div class="col-md-12 overv-p">
                 <ul class="quick-overview-list list-unstyled">
                     <li style="width: 120px;">
-                        <figure><img width="30" src="./Images/travel_10940118.svg" alt="" sizes="(max-width: 50px) 100vw, 50px">
+                        <figure><img width="30" src="./Images/travel_10940118.svg" alt=""
+                                sizes="(max-width: 50px) 100vw, 50px">
                         </figure>
                         <h5>Studios, 2 & 3 Bhk Premium Apartments</h5>
 
 
                     </li>
                     <li style="width: 120px;">
-                        <figure><img width="40" src="./Images/star_5717232.svg" alt="" sizes="(max-width: 70px) 100vw, 70px">
+                        <figure><img width="40" src="./Images/star_5717232.svg" alt=""
+                                sizes="(max-width: 70px) 100vw, 70px">
                         </figure>
                         <h5>Located in Yelahanka, Bengaluru</h5>
                     </li>
@@ -1146,24 +1154,28 @@ html {
                             <div class="item">
                                 <img class="d-banner" src="./Images/terrace amenities.webp" alt="banner"
                                     style="width: 100%; margin-top:-11px !important;">
-                                <img class="m-banner" src="./Images/terrace amenities.webp" alt="banner" style="width: 100%">
+                                <img class="m-banner" src="./Images/terrace amenities.webp" alt="banner"
+                                    style="width: 100%">
                             </div>
 
                             <div class="item active">
                                 <img class="d-banner" src="./Images/terrace amenities 2.webp" alt="banner"
                                     style="width: 100%; margin-top:-11px !important;">
-                                <img class="m-banner" src="./Images/terrace amenities 2.webp" alt="banner" style="width: 100%">
+                                <img class="m-banner" src="./Images/terrace amenities 2.webp" alt="banner"
+                                    style="width: 100%">
                             </div>
 
                             <div class="item">
                                 <img class="d-banner" src="./Images/terrace amenities 3.webp" alt="banner"
                                     style="width: 100%; margin-top:-11px !important;">
-                                <img class="m-banner" src="./Images/terrace amenities 3.webp" alt="banner" style="width: 100%">
+                                <img class="m-banner" src="./Images/terrace amenities 3.webp" alt="banner"
+                                    style="width: 100%">
                             </div>
                             <div class="item">
                                 <img class="d-banner" src="./Images/terrace amenities 4.webp" alt="banner"
                                     style="width: 100%; margin-top:-11px !important;">
-                                <img class="m-banner" src="./Images/terrace amenities 4.webp" alt="banner" style="width: 100%">
+                                <img class="m-banner" src="./Images/terrace amenities 4.webp" alt="banner"
+                                    style="width: 100%">
                             </div>
                         </div>
 
@@ -1393,13 +1405,13 @@ html {
 
     <section class="master-plan" id="Master-Plan">
         <h1>Master Plan</h1>
-        <div class="owl-item cloned master-plan-wrapper"
-             style="width: 60rem; height: 40rem; margin-right: 10px;">
+        <div class="owl-item cloned master-plan-wrapper" style="width: 60rem; height: 40rem; margin-right: 10px;">
             <div>
                 <div style="background-image: url(./Images/floor\ plan-08.png); background-size: cover; height: 38rem;">
                     <div class="link-overlay-wrapper wrapp"
-                         style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-                        <span class="link-icon" style="background-color: rgba(255, 255, 255, 0.9); font-size: 2rem; border-radius: 50%;">
+                        style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                        <span class="link-icon"
+                            style="background-color: rgba(255, 255, 255, 0.9); font-size: 2rem; border-radius: 50%;">
                             <a data-fancybox="general" href="./Images/floor plan-08.png">
                                 <i class="fa fa-chain"></i>
                             </a>
@@ -1417,7 +1429,7 @@ html {
     <section class="specifications-section" id="specifications">
         <div class="container">
             <h2 class="section-title">SPECIFICATIONS</h2>
-            
+
             <div class="specifications-grid">
                 <div class="spec-item">
                     <div class="spec-icon">
@@ -1487,7 +1499,7 @@ html {
 
                 <div class="spec-item">
                     <div class="spec-icon">
-                       <img src="./icons/security-camera.svg" alt="" class="spec-img">
+                        <img src="./icons/security-camera.svg" alt="" class="spec-img">
                     </div>
                     <h3 class="spec-title">Security</h3>
                     <div class="spec-details">
@@ -1563,8 +1575,8 @@ html {
 
                 <div class="row flex-box ">
                     <div class="col-md-6-2">
-                        <div class="border-map" >
-                            <a href="./image.webp" data-fancybox="location-map"  style="border-top-left-radius: 90px;" >
+                        <div class="border-map">
+                            <a href="./image.webp" data-fancybox="location-map" style="border-top-left-radius: 90px;">
                                 <img src="./image.webp" width="100%" alt="">
                             </a>
                         </div>
@@ -1807,7 +1819,7 @@ html {
             <div class="sppb-section-title sppb-text-center">
                 <div class="col-md-12">
                     <div class="col-md-12">
-                        <div class="section-title" style="color: #353736; padding: 1rem 0;" >
+                        <div class="section-title" style="color: #353736; padding: 1rem 0;">
                             PROJECT GALLERY
                         </div>
                         <!-- <div class="section-subtitle relative">
@@ -2432,106 +2444,113 @@ html {
         </div>
     </section>
 
-    
+
     <br clear="all">
 
 
 
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <!-- Left Section - Company Info (No Changes) -->
-            <div class="footer-left">
-                <div class="logo">
-                    <img src="./logo-new.png" alt="">
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Left Section - Company Info (No Changes) -->
+                <div class="footer-left">
+                    <div class="logo">
+                        <img src="./logo-new.png" alt="">
+                    </div>
+
+                    <div class="address-section">
+                        <h3>Address:</h3>
+                        <div class="address-info">
+                            G-1, Sohan RNR Icon, Near Alpine Eco Apartments,
+                            Doddanakundi Extension, Bengaluru, Karnataka 560 037
+                        </div>
+
+                        <div class="contact-info">
+                            <a href="tel:+918884456808" class="contact-item">
+                                <img src="./icons/phone.svg" alt="" style="height: 40px; width: 40px; margin: 0;">
+                                +91 8884456808
+                            </a>
+                            <a href="mailto:info@sohandevelopers.com" class="contact-item">
+                                <img src="./icons/envelope.svg" alt="" style="height: 40px; width: 40px; margin: 0;">
+                                info@sohandevelopers.com
+                            </a>
+                        </div>
+
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <img src="./icons/facebook.svg" alt="" class="social-icon"
+                                    style="height: 40px; width: 40px;">
+                            </a>
+                            <a href="#" class="social-icon">
+                                <img src="./icons/social.svg" alt="" class="social-icon"
+                                    style="height: 40px; width: 40px;">
+                            </a>
+                            <!-- <a href="#" class="social-icon">🐦</a> -->
+                            <!-- <a href="#" class="social-icon">💼</a> -->
+                        </div>
+                    </div>
                 </div>
 
-                <div class="address-section">
-                    <h3>Address:</h3>
-                    <div class="address-info">
-                        G-1, Sohan RNR Icon, Near Alpine Eco Apartments,
-                        Doddanakundi Extension, Bengaluru, Karnataka 560 037
-                    </div>
+                <!-- Quick Links Section (Updated) -->
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#amenities">Amenities</a></li>
+                        <li><a href="#Master-Plan">Master Plan</a></li>
+                        <li><a href="#specifications">Specifications</a></li>
+                        <li><a href="#location-new">Connectivity</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                    </ul>
+                </div>
 
-                    <div class="contact-info">
-                        <a href="tel:+918884456808" class="contact-item">
-                            <img src="./icons/phone.svg" alt="" style="height: 40px; width: 40px; margin: 0;">
-                            +91 8884456808
-                        </a>
-                        <a href="mailto:info@sohandevelopers.com" class="contact-item">
-                            <img src="./icons/envelope.svg" alt="" style="height: 40px; width: 40px; margin: 0;">
-                            info@sohandevelopers.com
-                        </a>
-                    </div>
+                <!-- Get in Touch Form -->
+                <div class="contact-form">
+                    <h3>Get in Touch</h3>
+                    <form method="POST"
+                        action="https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit"
+                        id="footerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input name="firstName" type="text" class="form-input" placeholder="First Name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input name="lastName" type="text" class="form-input" placeholder="Last Name" required>
+                            </div>
+                        </div>
 
-                    <div class="social-icons">
-                        <a href="#" class="social-icon">
-                           <img src="./icons/facebook.svg" alt="" class="social-icon" style="height: 40px; width: 40px;">
-                        </a>
-                        <a href="#" class="social-icon">
-                            <img src="./icons/social.svg" alt="" class="social-icon" style="height: 40px; width: 40px;">
-                        </a>
-                        <!-- <a href="#" class="social-icon">🐦</a> -->
-                        <!-- <a href="#" class="social-icon">💼</a> -->
-                    </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <div class="phone-input-group">
+                                <input type="text" class="country-code" value="+91 🇮🇳" readonly
+                                    style="border: 1px solid black; color: black;">
+                                <input name="phone" type="tel" class="form-input" placeholder="Enter your phone number"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input name="email" type="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Quick Links Section (Updated) -->
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#overview">Overview</a></li>
-                    <li><a href="#amenities">Amenities</a></li>
-                    <li><a href="#Master-Plan">Master Plan</a></li>
-                    <li><a href="#specifications">Specifications</a></li>
-                    <li><a href="#location-new">Connectivity</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact-us">Contact Us</a></li>
-                </ul>
+            <!-- Footer Bottom (No Changes) -->
+            <div class="footer-divider"></div>
+            <div class="registration-info">
+                PRM/KA/RERA/1251/309/PR/181109/002131
             </div>
-
-            <!-- Get in Touch Form -->
-            <div class="contact-form">
-                <h3>Get in Touch</h3>
-                <form>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="First Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Last Name" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <div class="phone-input-group">
-                            <input type="text" class="country-code" value="+91 🇮🇳" readonly style="border: 1px solid black; color: black;">
-                            <input type="tel" class="form-input" placeholder="Enter your phone number" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Enter your email" required>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
+            <div class="copyright">
+                Copyright © Sohan Realty 2025. All Rights Reserved.
             </div>
         </div>
-
-        <!-- Footer Bottom (No Changes) -->
-        <div class="footer-divider"></div>
-        <div class="registration-info">
-            PRM/KA/RERA/1251/309/PR/181109/002131
-        </div>
-        <div class="copyright">
-            Copyright © Sohan Realty 2025. All Rights Reserved.
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!--<div class="col-lg-12 col-sm-12 col-xs-12 fixed-footer-cust hidden-md hidden-lg hidden-sm">-->
     <!--    <div class="container">-->
@@ -2598,8 +2617,8 @@ html {
                                     Us!</b></h4>
                             <!-- <p class="text14 mrg-btm1">200+ families call it home—schedule your visit!
                             </p> -->
-                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html"
-                                method="GET" id="main-popup" name="main-popup" novalidate="novalidate">
+                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html" method="GET"
+                                id="main-popup" name="main-popup" novalidate="novalidate">
                                 <div class="col-xl-12">
                                     <div class="frm-gro">
                                         <div class="form-group wow fadeInUp"
@@ -2670,8 +2689,8 @@ html {
 
                             <!-- <p class="text14 mrg-btm1">200+ families call it home schedule your visit!
                             </p> -->
-                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html"
-                                method="GET" id="price-popup" name="price-popup" novalidate="novalidate">
+                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html" method="GET"
+                                id="price-popup" name="price-popup" novalidate="novalidate">
                                 <div class="col-xl-12">
                                     <div class="frm-gro">
                                         <div class="form-group wow fadeInUp"
@@ -2738,8 +2757,8 @@ html {
 
 
                             <!-- <p class="text14 mrg-btm1">200+ families call it home—schedule your visit!</p> -->
-                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html"
-                                method="GET" id="iam-model" name="float-form">
+                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html" method="GET"
+                                id="iam-model" name="float-form">
                                 <div class="col-xl-12">
                                     <div class="frm-gro">
                                         <div class="form-group wow fadeInUp"
@@ -2957,8 +2976,8 @@ html {
                             <p class="text14 mrg-btm1">Please select your name and enter your phone number and we
                                 will
                                 call you back.</p>
-                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html"
-                                method="GET" id="floor-form" name="floor-form">
+                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html" method="GET"
+                                id="floor-form" name="floor-form">
                                 <div class="col-xl-12">
                                     <div class="frm-gro">
                                         <div class="form-group wow fadeInUp"
@@ -3120,8 +3139,8 @@ html {
                             <h4 class="modal-title tits">Contact
                                 Us!</h4>
 
-                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html"
-                                method="GET" id="broucher-form" name="broucher-form">
+                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html" method="GET"
+                                id="broucher-form" name="broucher-form">
                                 <div class="col-xl-12">
                                     <div class="frm-gro">
                                         <div class="form-group wow fadeInUp"
@@ -3213,8 +3232,8 @@ html {
                                     aria-hidden="true" style=" font-size: 26px">X</span></button>
                             <h4 class="modal-title tits">Register Interest</h4>
 
-                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html"
-                                method="GET" id="registerr-form" name="registerr-form">
+                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html" method="GET"
+                                id="registerr-form" name="registerr-form">
                                 <div class="col-xl-12">
                                     <div class="frm-gro">
                                         <div class="form-group wow fadeInUp"
@@ -3304,7 +3323,8 @@ html {
                                     aria-hidden="true" style=" font-size: 26px">X</span></button>
                             <h4 class="modal-title tits">View Plan</h4>
 
-                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html"  method="GET" id="view-plan-form" name="view-plan-form">
+                            <form class="row form-wrap-brch" action="./thankyou/thankyou.html" method="GET"
+                                id="view-plan-form" name="view-plan-form">
                                 <div class="col-xl-12">
                                     <div class="frm-gro">
                                         <div class="form-group wow fadeInUp"
@@ -3984,24 +4004,24 @@ html {
         });
     </script>
 
-<script>
-    // Optional: Add smooth hover effects with JavaScript
-    document.addEventListener('DOMContentLoaded', function() {
-        const masterPlanWrapper = document.querySelector('.master-plan-wrapper');
-        const linkIcon = document.querySelector('.link-icon');
+    <script>
+        // Optional: Add smooth hover effects with JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            const masterPlanWrapper = document.querySelector('.master-plan-wrapper');
+            const linkIcon = document.querySelector('.link-icon');
 
-        masterPlanWrapper.addEventListener('mouseenter', function() {
-            linkIcon.style.animation = 'fadeInScale 0.3s ease forwards';
+            masterPlanWrapper.addEventListener('mouseenter', function () {
+                linkIcon.style.animation = 'fadeInScale 0.3s ease forwards';
+            });
+
+            masterPlanWrapper.addEventListener('mouseleave', function () {
+                linkIcon.style.animation = '';
+            });
         });
 
-        masterPlanWrapper.addEventListener('mouseleave', function() {
-            linkIcon.style.animation = '';
-        });
-    });
-
-    // Add CSS animation keyframes via JavaScript
-    const style = document.createElement('style');
-    style.textContent = `
+        // Add CSS animation keyframes via JavaScript
+        const style = document.createElement('style');
+        style.textContent = `
         @keyframes fadeInScale {
             0% {
                 transform: scale(0.8);
@@ -4013,31 +4033,103 @@ html {
             }
         }
     `;
-    document.head.appendChild(style);
-</script>
+        document.head.appendChild(style);
+    </script>
 
-<script>
-    function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenu.classList.toggle('active');
-    }
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function (event) {
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuBtn = document.querySelector('.mobile-menu-btn');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-        if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-            mobileMenu.classList.remove('active');
+
+
+    <script>
+        $(document).ready(function () {
+            $("#footerForm").submit(function (event) {
+                event.preventDefault();
+
+                // Disable button and show loading state
+                const $button = $(this).find("button[type='submit']");
+                $button.text("Please Wait...");
+                $button.attr("disabled", true);
+
+                // Gather form data - SCOPED TO THIS FORM ONLY
+                const formData = {
+                    firstName: $(this).find("input[name='firstName']").val(),
+                    lastName: $(this).find("input[name='lastName']").val(),
+                    phone: $(this).find("input[name='phone']").val(),
+                    email: $(this).find("input[name='email']").val()
+                };
+
+                // Debug: Log the form data to console
+                console.log("Footer Form Data:", formData);
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://emailjsfuntions-428145106157.asia-south1.run.app/skypark-footer-submit",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (msg) {
+                        $button.removeAttr("disabled").text("Submit");
+                        let result;
+
+                        if (msg === "Email sent successfully") {
+                            result =
+                                '<p style="color:green; font-weight:600; font-size:16px; width:100%">Email Sent Successfully!</p>';
+                            $("#footerForm")[0].reset();
+                            $("#footerFormNote").delay(5000).fadeOut();
+                        } else {
+                            result =
+                                '<p style="color:red; font-weight:600; font-size:16px; width:100%">' +
+                                msg +
+                                "</p>";
+                        }
+
+                        // Show result
+                        if (!$("#footerFormNote").length) {
+                            $("#footerForm").prepend('<div id="footerFormNote"></div>');
+                        }
+                        $("#footerFormNote").html(result).show();
+                    },
+                    error: function (xhr, status, error) {
+                        $button.removeAttr("disabled").text("Submit");
+                        console.log("Error:", error, "Status:", status, "Response:", xhr.responseText);
+
+                        if (!$("#footerFormNote").length) {
+                            $("#footerForm").prepend('<div id="footerFormNote"></div>');
+                        }
+                        $("#footerFormNote")
+                            .html(
+                                '<p style="color:red; font-weight:600; font-size:16px; width:100%">Error sending email!</p>'
+                            )
+                            .show();
+                    },
+                });
+
+                return false;
+            });
+        });
+    </script>
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
         }
-    });
 
-    // Handle form submission
-    document.querySelector('form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Thank you for your interest! We will contact you soon.');
-    });
-</script>
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+
+            if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Handle form submission
+        // document.querySelector('form').addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your interest! We will contact you soon.');
+        // });
+    </script>
 
 
 
